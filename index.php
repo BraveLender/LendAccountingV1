@@ -6,6 +6,8 @@
     <title>Alomo System v3 UI design</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <script src="library/jquery-3.5.1.min.js"></script>
+    <script src="library/tilt.jquery.min.js"></script>
 </head>
 <body>
     <main>
@@ -59,8 +61,86 @@
             
         </section>
         <section main-display-area>
-           
+           <section full-width flex space-evenly row-wrap>
+               <div basic-card in-flex>
+                   Demo
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+                   Demo
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+
+               <div basic-card in-flex>
+                   Demo
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+                   Demo
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+
+               </div><div basic-card in-flex>
+                   Demo
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+                   Demo
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+               <div basic-card in-flex>
+
+               </div>
+           </section>
         </section>
     </main>
+    <script>
+        $(function(){
+            $('[basic-card]').tilt();
+        });
+    </script>
 </body>
 </html>
