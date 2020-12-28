@@ -61,6 +61,21 @@
             
         </section>
         <section main-display-area>
+            <section page-title flex space-between vertical-center>
+                <h1>Disbursements</h1> 
+                <span>
+                    <span class="searchBox">
+                        <input class="searchInput"type="search" placeholder="Search"  search-input>
+                        <button class="searchButton" href="#" type="button">
+                            <i class="fa fa-search">
+                            </i>
+                        </button>
+                    </span>
+                    <span>
+                    
+                    </span>
+                </span>
+            </section>
            <section full-width flex space-evenly row-wrap>
                <div basic-card in-flex>
                    Demo
@@ -137,9 +152,15 @@
            </section>
         </section>
     </main>
+    <footer>
+        <div loader-section in-flex row>
+            <code blink-content>Processing</code>
+            <div class="lds-hourglass"></div>
+        </div>
+    </footer>
     <script>
         $(function(){
-            $('[basic-card]').tilt();
+            $('[basic-card], [tilt-this]').tilt();
         });
     </script>
 </body>
