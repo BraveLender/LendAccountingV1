@@ -6,7 +6,8 @@
     --basic-font-family: Arial, Helvetica, sans-serif;
     --system-green-color: rgba(4, 196, 106, 0.855);
     --font1: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font2:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --font2:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --input-hover-shadow: 20px 20px 60px rgba(168, 42, 63, 0.349), -20px -20px 60px rgba(228, 56, 85, 0.212);
 }
 html, body{
     /* background-color: #e86b19;
@@ -134,7 +135,7 @@ main{
     position: relative;
     border-radius: 10px;
     padding: 10px;
-    margin: 10px 25px;
+    margin: 10px 15px;
     box-shadow: 20px 20px 60px rgba(168, 42, 63, 0.349), -20px -20px 60px rgba(228, 56, 85, 0.212);
     font-family: var(--basic-font-family);
     font-size: 13px;
@@ -151,20 +152,33 @@ main{
     font-size: 22px;
     text-shadow: 0px 0px 0px rgba(204, 33, 62, 0.349);
     border-bottom: 1px inset rgba(204, 33, 62, 0.349);
+    margin-right: 5px;
 }
 /* SEARCH */
-.searchBox [search-input]{
+.searchBox{
+    margin-left: 10px;
+}
+input, select{
     transition: .6s;
     outline: none;
     padding: 5px 8px;
     border: 1px solid rgba(255, 255, 255, 0.239);
     border-radius: 3px;
 }
+input:hover{
+    box-shadow: var(--input-hover-shadow);
+}
+select:hover{
+    box-shadow: var(--input-hover-shadow);
+}
+select:focus{
+    box-shadow: var(--input-hover-shadow);
+}
 .searchBox [search-input]:focus{
     /* border-color: ; */
-    box-shadow: 20px 20px 60px rgba(168, 42, 63, 0.349), -20px -20px 60px rgba(228, 56, 85, 0.212);
+    box-shadow: var(--input-hover-shadow);
 }
-.searchBox button{
+button{
     transition: .6s;
     outline:none;
     padding: 5px 8px;
@@ -172,13 +186,14 @@ main{
     border-radius: 3px;
     margin: 2px;
     cursor: pointer;
-    box-shadow: 20px 20px 60px rgba(168, 42, 63, 0.349), -20px -20px 60px rgba(228, 56, 85, 0.212);
+    box-shadow: var(--input-hover-shadow);
 }
-.searchBox button:hover{
-    box-shadow: 10px 10px 40px rgba(168, 42, 63, 0.829), -10px -10px 40px rgba(228, 56, 85, 0.74);
+button:hover{
+    box-shadow: 5px 5px 80px rgba(168, 42, 63, 0.829), -5px -5px 80px rgba(228, 56, 85, 0.74);
     color: #e26e2b;
 }
-[overflow-x]
+[nowrap]{word-wrap: none; white-space: nowrap;}
+[overflow-x]{overflow-x: auto;}
 [full-width]{width: calc(100% - 2px);}
 [flex]{display: flex;}
 [in-flex]{display: inline-flex;}
@@ -188,6 +203,8 @@ main{
 [space-around]{justify-content: space-around;}
 [border-1]{border: 1px solid #777;}
 [vertical-center]{align-items: center;align-content: center;}
+[font1]{font-family: var(--font1);}
+[font2]{font-family: var(--font2);}
 [loader-section]{
     position: fixed;
     top:0px;
@@ -213,6 +230,20 @@ main{
     }
   }
 
+  /* DATE SELECTOR */
+  [type="date"] {
+    background:#fff url(../system_images/icons/calendar_2.webp)  97% 50% no-repeat ;
+  }
+  [type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  [type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+  label[input-title]{
+    font: 13px/1.4 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    display: block;
+  }
 /* SCROLL BAR */
 
 *::-webkit-scrollbar-track

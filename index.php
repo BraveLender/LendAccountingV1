@@ -61,18 +61,43 @@
             
         </section>
         <section main-display-area>
-            <section page-title flex space-between vertical-center>
-                <h1>Disbursements</h1> 
-                <span>
+            <section page-title flex space-between vertical-center overflow-x>
+                <span nowrap>
+                    <center><label>Date Range</label></center>
+                    <span>
+                        <input type="date" title="Start Date (From)"> <b>:</b>
+                        <input type="date" title="End Date (To)">
+                        <button title="Fetch Records">
+                            <i class="fa fa-filter"></i><span font2> Filter</span>
+                        </button>
+                    </span>
+                </span>
+                <span nowrap>
+                    <center><label>&nbsp;</label></center>
+                    <select name="" id="">
+                        <option value="">Display Type</option>
+                        <option value="cards">Cards</option>
+                        <option value="table">Tables</option>
+                    </select>
+                    <select name="" id="">
+                        <option value=""> Status</option>
+                        <option value="all">All</option>
+                        <option value="active">Active</option>
+                        <option value="completed">Completed</option>
+                        <option value="defaulted">Defaulted</option>
+                    </select>
+                    <button>
+                        <i class="fa fa-filter" title="Fetch Records"></i><span font2> Filter</span>
+                    </button>
+                </span>
+                <span nowrap>
+                    <center><label>&nbsp;</label></center>
                     <span class="searchBox">
                         <input class="searchInput"type="search" placeholder="Search"  search-input>
-                        <button class="searchButton" href="#" type="button">
+                        <button class="searchButton" href="#" type="button" title="Search">
                             <i class="fa fa-search">
                             </i>
                         </button>
-                    </span>
-                    <span>
-                    
                     </span>
                 </span>
             </section>
