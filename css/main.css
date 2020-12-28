@@ -1,0 +1,95 @@
+:root{
+    --bg-image: url("../system_images/bg/luke-chesser-tgrBcf7S_dY-unsplash.jpg");
+    --left-menu-width: 18%;
+    --top-header-height: 50px;
+}
+html, body{
+    /* background-color: #e86b19;
+    background-image: var(--bg-image); */
+    background: linear-gradient(-45deg, #c6314a, #e26e2b);
+    /* background-size: cover; */
+    padding: 0px;
+}
+main{
+    display: flex;
+    position: fixed;
+    top: 5%;
+    right: 3%;
+    left: 3%;
+    bottom: 2%;
+    border: 5px solid #ffffff3d;
+    border-radius: 25px;
+    box-shadow: 0;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+/* //MENU */
+[left-main-menu]{
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    width: var(--left-menu-width);
+    top: 0px;
+    bottom: 0px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    overflow: hidden;
+    overflow-y: auto;
+    background: linear-gradient(to left, rgb(223, 223, 223), #eeeeeeb5);
+}
+/* MAIN TOP HEADER TAB */
+[top-main-header]{
+    position: absolute;
+    display: flex;
+    left: var(--left-menu-width);
+    width: calc(100% - var(--left-menu-width));
+    height: var(--top-header-height);
+    top: 0px;
+    background: linear-gradient(to bottom, rgb(219, 218, 218), #eeeeeeb5);
+    border-top-right-radius: 25px;
+    overflow: hidden;
+    overflow-x: auto;
+}
+/* MAIN DISPLAY AREA */
+[main-display-area]{
+    position: absolute;
+    /* display: flex; */
+    left: var(--left-menu-width);
+    width: calc(100% - var(--left-menu-width));
+    top: var(--top-header-height);
+    right: 0px;
+    bottom: 0px;
+    overflow-y: auto;
+    background: linear-gradient(145deg, rgba(235, 232, 232, 0.89),  #eeeeee3d);
+    border-bottom-right-radius: 25px;
+}
+
+
+
+
+/* SCROLL BAR */
+
+*::-webkit-scrollbar-track
+{
+	--webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+    background-color: hsla(0, 0%, 96%, 0.63);
+    margin-bottom: 10px;
+}
+
+*::-webkit-scrollbar
+{
+    width: 5px;
+    height: 5px;
+    background-color: rgba(245, 245, 245, 0.068);
+    margin-bottom: 10px;
+}
+
+*::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	--webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: rgba(4, 196, 106, 0.855);
+    margin-bottom: 10px;
+}
