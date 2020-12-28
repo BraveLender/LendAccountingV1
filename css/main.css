@@ -2,6 +2,7 @@
     --bg-image: url("../system_images/bg/luke-chesser-tgrBcf7S_dY-unsplash.jpg");
     --left-menu-width: 18%;
     --top-header-height: 50px;
+    --business-name-height: calc(var(--top-header-height) + 50px);
 }
 html, body{
     /* background-color: #e86b19;
@@ -65,7 +66,60 @@ main{
     border-bottom-right-radius: 25px;
 }
 
-
+/* LEFT MAIN MENU CONTENT */
+[business-name-details]{
+    display: inline-flex;
+    width: calc(97% - 5px);
+    /* border: 1px solid red; */
+    height: var(--business-name-height);
+    padding-left: 10px;
+    border-top-left-radius: 25px;
+}
+[main-menu]{
+    display: inline-flex;
+    position: absolute;
+    flex-flow: column;
+    /* border: 1px solid green; */
+    bottom: 0px;
+    left:0px;
+    right:0px;
+    top: var(--business-name-height);
+    border-bottom-left-radius: 25px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+[main-menu] > span{
+    transition: .6s;
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 40px;
+    min-height: 30px;
+    color:#444444ed;
+    margin-bottom: 5px;
+}
+[main-menu] > span.active{
+    background: #f8f8f89a;
+    color: #e26e2b;
+}
+[main-menu] > span:hover{
+    background: #f8f8f89a;
+    color: #e26e2b;
+    cursor: pointer;                
+}
+[main-menu] > span *:hover{
+    cursor: pointer;
+}
+[main-menu] > span i{
+    margin: 0px 5px;
+    width:20px;
+}
+[main-menu] > span label{
+    padding-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
 
 
 /* SCROLL BAR */
@@ -75,7 +129,7 @@ main{
 	--webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	border-radius: 10px;
     background-color: hsla(0, 0%, 96%, 0.63);
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
 
 *::-webkit-scrollbar
@@ -83,7 +137,7 @@ main{
     width: 5px;
     height: 5px;
     background-color: rgba(245, 245, 245, 0.068);
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
 
 *::-webkit-scrollbar-thumb
@@ -91,5 +145,5 @@ main{
 	border-radius: 10px;
 	--webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: rgba(4, 196, 106, 0.855);
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
