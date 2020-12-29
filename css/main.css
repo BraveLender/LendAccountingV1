@@ -129,7 +129,7 @@ main{
 [basic-card]{
     /* transition: .6s; */
     min-width: 200px;
-    height: 80px;
+    min-height: 80px;
     background: #ffffff;
     overflow: hidden;
     position: relative;
@@ -140,6 +140,19 @@ main{
     font-family: var(--basic-font-family);
     font-size: 13px;
 }
+[basic-card] *:hover{
+    text-shadow: none !important;
+}
+[basic-card] h4{
+    padding: 5px;
+    margin-bottom: 5px;
+}
+[basic-card] span:nth-child(2){
+    margin-top: 5px;
+}
+
+[basic-card] h3:hover{text-shadow: 1px 1px 1px rgba(168, 42, 63, 0.349) !important;}
+
 [page-title]{
     font-family: var(--font2);
     padding: 0px 20px;
@@ -154,7 +167,6 @@ main{
     border-bottom: 1px inset rgba(204, 33, 62, 0.349);
     margin-right: 5px;
 }
-/* SEARCH */
 .searchBox{
     margin-left: 10px;
 }
@@ -192,12 +204,32 @@ button:hover{
     box-shadow: 5px 5px 80px rgba(168, 42, 63, 0.829), -5px -5px 80px rgba(228, 56, 85, 0.74);
     color: #e26e2b;
 }
+[status-icon]{
+    padding: 5px;
+    border-radius: 5px;
+}
+[status-completed]{
+    background-color: var(--system-green-color);
+    color: rgba(255, 255, 255, 0.816);
+}
+[status-pending]{
+    background-color: #e26e2b;
+    color: rgba(248, 248, 248, 0.604);
+}
+[status-default]{
+    background-color: #c6314a;
+    color: rgba(255, 255, 255, 0.816);
+}
+[grey]{color: rgb(128, 128, 128);}
+[hover-b]:hover{font-weight: bold;}
+[hover-dark]:hover{color: #333333;}
 [nowrap]{word-wrap: none; white-space: nowrap;}
 [overflow-x]{overflow-x: auto;}
 [full-width]{width: calc(100% - 2px);}
 [flex]{display: flex;}
 [in-flex]{display: inline-flex;}
 [row-wrap]{flex-flow: row; flex-wrap: wrap;}
+[cols]{flex-flow: column;}
 [space-evenly]{justify-content: space-evenly;}
 [space-between]{justify-content: space-between;}
 [space-around]{justify-content: space-around;}
@@ -205,6 +237,10 @@ button:hover{
 [vertical-center]{align-items: center;align-content: center;}
 [font1]{font-family: var(--font1);}
 [font2]{font-family: var(--font2);}
+[small]{font-size:small;}
+[center]{text-align: center;}
+[mg0]{margin: 0px;}
+[pd]{padding: 0px;}
 [loader-section]{
     position: fixed;
     top:0px;
