@@ -190,6 +190,7 @@ main{
 }
 [admin-profile-menu]{
     display: flex;
+    display: none;
     position: fixed;
     z-index: 999;
     top: calc(1.5% + var(--top-header-height));
@@ -205,6 +206,9 @@ main{
 }
 [admin-profile-menu] [menu-item]:last-child{
     margin-bottom: 0px;
+}
+[top-admin-profile-holder] *{
+    cursor: pointer;
 }
 .searchBox{
     margin-left: 10px;

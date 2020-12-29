@@ -27,6 +27,9 @@
             <span menu-item >
                 <i class="fa fa-user-lock"></i> <label>Sign out</label>
             </span>
+            <span menu-item in-flex center style="justify-content:center!important; background:#fff" close-admin-profile-menu>
+                <center><i class="fa fa-chevron-up"></i></center>
+            </span>
         </section>
     </header>
     <main>
@@ -78,7 +81,7 @@
         </section>
         <section top-main-header flex space-between>
             <span></span>
-            <span in-flex row nowrap vertical-center>
+            <span in-flex row nowrap vertical-center top-admin-profile-holder >
                 <img src="system_images/bg/admin.jpg" alt="" home-admin-thumb-img>
                 <span in-flex cols nowrap>
                     <label small  font2 toggle-admin-profile-menu cursor-pointer> <span>John Doe</span> &nbsp; <i class="fa fa-chevron-down" grey smaller cursor-pointer hover-b transition hover-dark></i></label>
@@ -210,6 +213,7 @@
             <div class="lds-hourglass"></div>
         </div>
     </footer>
+    <script src="js/main.js"></script>
     <script>
         $(function(){
             $('[basic-card], [tilt-this]').tilt();
