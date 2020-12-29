@@ -10,6 +10,25 @@
     <script src="library/tilt.jquery.min.js"></script>
 </head>
 <body>
+    <header>
+        <section admin-profile-menu tilt-this cols>
+            <span menu-item>
+                <i class="fa fa-envelope-open-text"></i> <label>Personal Messages</label>
+            </span>
+            <span menu-item>
+                <i class="fa fa-tasks"></i> <label>My Operations</label>
+            </span>
+            <span menu-item>
+                <i class="fa fa-user-cog"></i> <label>Account Settings</label>
+            </span>
+            <span menu-item>
+                <i class="fa fa-bug"></i> <label>Report Problem</label>
+            </span>
+            <span menu-item >
+                <i class="fa fa-user-lock"></i> <label>Sign out</label>
+            </span>
+        </section>
+    </header>
     <main>
         <section left-main-menu scroll-bar>
             <div business-name-details>
@@ -57,8 +76,15 @@
                 </span>
             </div>
         </section>
-        <section top-main-header>
-            
+        <section top-main-header flex space-between>
+            <span></span>
+            <span in-flex row nowrap vertical-center>
+                <img src="system_images/bg/admin.jpg" alt="" home-admin-thumb-img>
+                <span in-flex cols nowrap>
+                    <label small  font2 toggle-admin-profile-menu cursor-pointer> <span>John Doe</span> &nbsp; <i class="fa fa-chevron-down" grey smaller cursor-pointer hover-b transition hover-dark></i></label>
+                    <label smaller grey font2 position>Loan Officer</label>
+                </span>
+            </span>
         </section>
         <section main-display-area>
             <section page-title flex space-between vertical-center overflow-x>

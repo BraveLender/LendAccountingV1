@@ -49,13 +49,15 @@ main{
     position: absolute;
     display: flex;
     left: var(--left-menu-width);
-    width: calc(100% - var(--left-menu-width));
+    width: calc(100% - (var(--left-menu-width) + 10px));
     height: var(--top-header-height);
     top: 0px;
     background: linear-gradient(to bottom, rgb(219, 218, 218), #eeeeeeb5);
     border-top-right-radius: 25px;
     overflow: hidden;
     overflow-x: auto;
+    margin-right: 10px;
+    padding-right: 10px;
 }
 /* MAIN DISPLAY AREA */
 [main-display-area]{
@@ -93,7 +95,7 @@ main{
     overflow: hidden;
     overflow-y: auto;
 }
-[main-menu] > span{
+[menu-item], [main-menu] > span{
     transition: .6s;
     display: inline-flex;
     align-items: center;
@@ -113,14 +115,24 @@ main{
     color: #e26e2b;
     cursor: pointer;                
 }
+
+[menu-item]:hover{
+    background: #f8f8f89a;
+    color: #e26e2b;
+    cursor: pointer; 
+}
 [main-menu] > span *:hover{
     cursor: pointer;
 }
-[main-menu] > span i{
+[menu-item] *:hover{
+    cursor: pointer;
+    
+}
+[menu-item] i, [main-menu] > span i{
     margin: 0px 5px;
     width:20px;
 }
-[main-menu] > span label{
+[menu-item] label, [main-menu] > span label{
     padding-left: 10px;
     font-family: var(--basic-font-family);
     font-size: 13px;
@@ -166,6 +178,33 @@ main{
     text-shadow: 0px 0px 0px rgba(204, 33, 62, 0.349);
     border-bottom: 1px inset rgba(204, 33, 62, 0.349);
     margin-right: 5px;
+}
+[home-admin-thumb-img]{
+    display: inline-flex;
+    outline: none;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.356);
+    margin-right: 5px;
+}
+[admin-profile-menu]{
+    display: flex;
+    position: fixed;
+    z-index: 999;
+    top: calc(1.5% + var(--top-header-height));
+    right: 1%;
+    width: 180px;
+    /* min-height: 200px; */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.973), #ecb2bcd8);
+    box-shadow: var(--input-hover-shadow);
+    border-radius:10px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    overflow: hidden;
+}
+[admin-profile-menu] [menu-item]:last-child{
+    margin-bottom: 0px;
 }
 .searchBox{
     margin-left: 10px;
@@ -220,6 +259,11 @@ button:hover{
     background-color: #c6314a;
     color: rgba(255, 255, 255, 0.816);
 }
+[push-to-bottom]{
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 0px;
+}
 [grey]{color: rgb(128, 128, 128);}
 [hover-b]:hover{font-weight: bold;}
 [hover-dark]:hover{color: #333333;}
@@ -238,7 +282,10 @@ button:hover{
 [font1]{font-family: var(--font1);}
 [font2]{font-family: var(--font2);}
 [small]{font-size:small;}
+[smaller]{font-size: smaller;}
 [center]{text-align: center;}
+[cursor-pointer]{cursor: pointer;}
+[transition]{transition: .6s;}
 [mg0]{margin: 0px;}
 [pd]{padding: 0px;}
 [loader-section]{
