@@ -16,7 +16,7 @@
                 <i class="fa fa-envelope-open-text"></i> <label>Personal Messages</label>
             </span>
             <span menu-item>
-                <i class="fa fa-tasks"></i> <label>My Operations</label>
+                <i class="fa fa-tasks"></i> <label>Scheduled Tasks</label>
             </span>
             <span menu-item>
                 <i class="fa fa-user-cog"></i> <label>Account Settings</label>
@@ -42,37 +42,31 @@
                     <i class="fa fa-home"></i> <label>My Dashboard</label>
                 </span>
                 <span class="active">
-                    <i class="fa fa-file-invoice-dollar"></i> <label>Disbursements</label>
+                    <i class="fa fa-file-invoice"></i> <label>Disbursements</label>
                 </span>
                 <span>
                     <i class="fa fa-credit-card"></i> <label>Repayments</label>
                 </span>
                 <span>
-                    <i class="fa fa-sign-out-alt"></i> <label>Sign out</label>
+                    <i class="fa fa-users"></i> <label>Customers</label>
                 </span>
                 <span>
-                    <i class="fa fa-home"></i> <label>My Dashboard</label>
+                    <i class="fa fa-user-times"></i> <label>Defaults</label>
                 </span>
                 <span>
-                    <i class="fa fa-file-invoice-dollar"></i> <label>Disbursements</label>
+                    <i class="fa fa-dollar-sign"></i> <label>Expenses</label>
                 </span>
                 <span>
-                    <i class="fa fa-credit-card"></i> <label>Repayments</label>
+                    <i class="fa fa-folder-open"></i> <label>Documents</label>
                 </span>
                 <span>
-                    <i class="fa fa-sign-out-alt"></i> <label>Sign out</label>
+                    <i class="fa fa-chart-bar"></i> <label>Reports</label>
                 </span>
                 <span>
-                    <i class="fa fa-home"></i> <label>My Dashboard</label>
+                    <i class="fa fa-user-shield"></i> <label>Administrators</label>
                 </span>
                 <span>
-                    <i class="fa fa-file-invoice-dollar"></i> <label>Disbursements</label>
-                </span>
-                <span>
-                    <i class="fa fa-credit-card"></i> <label>Repayments</label>
-                </span>
-                <span>
-                    <i class="fa fa-credit-card"></i> <label>Repayments</label>
+                    <i class="fa fa-cogs"></i> <label>System Settings</label>
                 </span>
                 <span>
                     <i class="fa fa-sign-out-alt"></i> <label>Sign out</label>
@@ -80,12 +74,44 @@
             </div>
         </section>
         <section top-main-header flex space-between>
-            <span></span>
-            <span in-flex row nowrap vertical-center top-admin-profile-holder >
-                <img src="system_images/bg/admin.jpg" alt="" home-admin-thumb-img>
-                <span in-flex cols nowrap>
-                    <label small  font2 toggle-admin-profile-menu cursor-pointer> <span>John Doe</span> &nbsp; <i class="fa fa-chevron-down" grey smaller cursor-pointer hover-b transition hover-dark></i></label>
-                    <label smaller grey font2 position>Loan Officer</label>
+            <span in-flex  vertical-center>
+                <span icon-menu>
+                    <i class="fa fa-hand-holding-usd"></i>
+                </span>
+                <span icon-menu>
+                    <i class="fa fa-file-invoice-dollar"></i>
+                </span>
+                <span icon-menu>
+                    <i class="fa fa-search-dollar"></i>
+                </span>
+            </span>
+            <!--  -->
+            <span in-flex  vertical-center>
+                <span icon-menu>
+                    <i class="fa fa-user-check"></i>
+                </span>
+                <span icon-menu>
+                    <i class="fa fa-user-plus"></i>
+                </span>
+            </span>
+            <!--  -->
+            <span in-flex  vertical-center>
+                <span icon-menu>
+                    <i class="fa fa-calculator"></i>
+                </span>
+                <span icon-menu>
+                    <i class="fa fa-mail-bulk"></i>
+                </span>
+                <span icon-menu>
+                    <i class="fa fa-bell"></i>
+                </span>
+                
+                <span in-flex row nowrap vertical-center top-admin-profile-holder >
+                    <img src="system_images/bg/admin.jpg" alt="" home-admin-thumb-img>
+                    <span in-flex cols nowrap>
+                        <label small  font2 toggle-admin-profile-menu cursor-pointer> <span>John Doe</span> &nbsp; <i class="fa fa-chevron-down" grey smaller cursor-pointer hover-b transition hover-dark></i></label>
+                        <label smaller grey font2 position>Loan Officer</label>
+                    </span>
                 </span>
             </span>
         </section>
@@ -130,7 +156,80 @@
                     </span>
                 </span>
             </section>
+            <hr hr>
            <section full-width flex space-evenly row-wrap>
+               <div basic-card in-flex cols space-between>
+                   <span full-width in-flex space-between>
+                        <span in-flex cols nowrap space-between>
+                            <h4 mg0 title="Client name">John Doe</h4>
+                        </span>
+                        <span  in-flex cols nowrap space-between>
+                            <span status-icon status-completed center title="Completed"> <i class="fa fa-check-square"></i></span>
+                        </span>
+                   </span>
+                   <span full-width in-flex space-between>
+                        <span in-flex vertical-center>
+                            <h3 mg0 grey hover-dark title="Amount obtained">$000, 000, 000</h3>
+                        </span>
+                        <span title="open">
+                            <button title="open"><i class="fa fa-chevron-right"></i></button>
+                        </span>
+                   </span>
+               </div>
+               <div basic-card  in-flex cols space-between>
+                    <span full-width in-flex space-between>
+                        <span in-flex cols nowrap space-between>
+                            <h4 mg0 title="Client name">John Doe</h4>
+                        </span>
+                        <span  in-flex cols nowrap space-between>
+                            <span status-icon status-pending center title="Pending Completion"> <i class="fa fa-clock"></i></span>
+                        </span>
+                   </span>
+                   <span full-width in-flex space-between>
+                        <span in-flex vertical-center>
+                            <h3 mg0 grey hover-dark title="Amount obtained">$000, 000, 000</h3>
+                        </span>
+                        <span title="open">
+                            <button title="open"><i class="fa fa-chevron-right"></i></button>
+                        </span>
+                   </span>
+               </div>
+               <div basic-card  in-flex cols space-between>
+                    <span full-width in-flex space-between>
+                        <span in-flex cols nowrap space-between>
+                            <h4 mg0 title="Client name">John Doe</h4>
+                        </span>
+                        <span  in-flex cols nowrap space-between>
+                            <span status-icon status-default center title="Default"> <i class="fa fa-times-circle"></i></span>
+                        </span>
+                   </span>
+                   <span full-width in-flex space-between>
+                        <span in-flex vertical-center>
+                            <h3 mg0 grey hover-dark title="Amount obtained">$000, 000, 000</h3>
+                        </span>
+                        <span title="open">
+                            <button title="open"><i class="fa fa-chevron-right"></i></button>
+                        </span>
+                   </span>
+               </div>
+               <div basic-card  in-flex cols space-between>
+                    <span full-width in-flex space-between>
+                        <span in-flex cols nowrap space-between>
+                            <h4 mg0 title="Client name">John Doe</h4>
+                        </span>
+                        <span  in-flex cols nowrap space-between>
+                            <span status-icon status-completed center title="Completed"> <i class="fa fa-check-square"></i></span>
+                        </span>
+                   </span>
+                   <span full-width in-flex space-between>
+                        <span in-flex vertical-center>
+                            <h3 mg0 grey hover-dark title="Amount obtained">$000, 000, 000</h3>
+                        </span>
+                        <span title="open">
+                            <button title="open"><i class="fa fa-chevron-right"></i></button>
+                        </span>
+                   </span>
+               </div>
                <div basic-card in-flex cols space-between>
                    <span full-width in-flex space-between>
                         <span in-flex cols nowrap space-between>

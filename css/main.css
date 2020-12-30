@@ -220,6 +220,19 @@ input, select{
     border: 1px solid rgba(255, 255, 255, 0.239);
     border-radius: 3px;
 }
+[icon-menu]{
+    display:inline-flex;
+    align-items: center;
+    align-content: center;
+    transition: .6s;
+    font-size:18px;
+    margin: 0px 35px;
+    color: #777777d0;
+    cursor: pointer;
+}
+[icon-menu]:hover{
+    color: #e26e2b;
+}
 input:hover{
     box-shadow: var(--input-hover-shadow);
 }
@@ -267,6 +280,11 @@ button:hover{
     position: absolute;
     bottom: 0px;
     margin-bottom: 0px;
+}
+[hr]{
+    border-top: 0px solid transparent;
+    margin-top: 15px;
+    border: 1px solid rgba(158, 157, 157, 0.253);
 }
 [grey]{color: rgb(128, 128, 128);}
 [hover-b]:hover{font-weight: bold;}
