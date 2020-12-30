@@ -1,5 +1,6 @@
 $(function(){
     var circle_loader = '<div class="circle_loader"><svg viewBox="0 0 140 140" width="50" height="50"><g class="outline"><path d="m 70 28 a 1 1 0 0 0 0 84 a 1 1 0 0 0 0 -84" stroke="rgba(0,0,0,0.1)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></g><g class="circle"><path d="m 70 28 a 1 1 0 0 0 0 84 a 1 1 0 0 0 0 -84" stroke="#ff7601" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="200" stroke-dasharray="300"></path></g></svg></div>';
+    var mainDisplayArea = $("[main-display-area]");
     $('[basic-card], [tilt-this]').tilt();
     // ADMIN PROFILE MENU TOGGLE AREA
     $("[admin-profile-menu] [menu-item]").click(function(){
@@ -31,10 +32,23 @@ $(function(){
     }
     // NAVIGATION CONTROLS
         $("#system-menu span, [load_page]").click(function(){
-            showBottomLoader();
-            setTimeout(() => {
-                closeLoaders();
-            }, 1500);
+            let page = $(this).attr("source");
+            if(page && page.length > 0){
+                showBottomLoader();
+                $.get(page, function(){
+                    setTimeout(() => {
+                        mainDisplayArea.children().slideUp();
+                        mainDisplayArea.empty();
+                        closeLoaders();
+                    }, 1500);
+                }).fail(function(error){
+                    closeLoaders();
+                    AlertPageLoadFailed(error.status);
+                });
+                
+            }else{
+                AlertPageLoadFailed(4040);
+            }
         });
     // FUNCTIONS DEFINITIONS
     function showBottomLoader(){
@@ -49,4 +63,42 @@ $(function(){
     function openLoader(){return showBottomLoader();}
     function showLoader(){return showBottomLoader();}
     function closeLoaders(){$("[processing_loader]").slideUp(); return swal.close();}
+    function AlertPageLoadFailed(statusCode){
+        let message;
+        switch (statusCode) {
+            case 404:
+                message = "This feature is currently unavailable";
+                break;
+            case 4040:
+                message = "Source currently not available";
+                break;
+            case 408:
+                message = "Please try again. This process took longer than usual"
+                break;
+            case 500:
+                message = "Internal server error"
+                break;
+            case 0:
+                message = "No internet connection"
+                break;
+            default:
+                message = "Something went wrong";
+                break;
+        }
+        swal.fire({
+            text: message,
+            showConfirmButton: false,
+            customClass:{
+                container: "notification-popup",
+                popup: "notification-popup-content",
+            }
+        });
+        setTimeout(() => {
+            $(".notification-popup").slideUp();
+        }, 3500);
+        setTimeout(() => {
+            closeLoaders();
+        }, 4000);
+        return false;
+    }
 });

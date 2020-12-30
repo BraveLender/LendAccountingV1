@@ -43,7 +43,7 @@
                 <span>
                     <i class="fa fa-home"></i> <label>My Dashboard</label>
                 </span>
-                <span class="active">
+                <span class="active" source="test">
                     <i class="fa fa-file-invoice"></i> <label>Disbursements</label>
                 </span>
                 <span>
@@ -316,7 +316,9 @@
     </footer>
     <script src="js/main.js"></script>
     <script>
-        $('[basic-card], [tilt-this]').tilt();
+        // $('[basic-card], [tilt-this]').tilt();
+        $("header").prepend("<style></style>");
+        // $("style").append(".notification-popup{left:10px !important}")
     </script>
 </body>
 </html>

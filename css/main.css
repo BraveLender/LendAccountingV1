@@ -209,6 +209,10 @@ main{
 }
 [top-admin-profile-holder] *{
     cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 .searchBox{
     margin-left: 10px;
@@ -286,9 +290,14 @@ button:hover{
     margin-top: 15px;
     border: 1px solid rgba(158, 157, 157, 0.253);
 }
+#system-menu span, [load_page]{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
 [grey]{color: rgb(128, 128, 128);}
 [hover-b]:hover{font-weight: bold;}
-[hover-dark]:hover{color: #333333;}
+[hover-dark]:hover{color: rgb(51, 51, 51);}
 [nowrap]{word-wrap: none; white-space: nowrap;}
 [overflow-x]{overflow-x: auto;}
 [full-width]{width: calc(100% - 2px);}
@@ -299,7 +308,7 @@ button:hover{
 [space-evenly]{justify-content: space-evenly;}
 [space-between]{justify-content: space-between;}
 [space-around]{justify-content: space-around;}
-[border-1]{border: 1px solid #777;}
+[border-1]{border: 1px solid rgb(120, 120, 120);}
 [vertical-center]{align-items: center;align-content: center;}
 [font1]{font-family: var(--font1);}
 [font2]{font-family: var(--font2);}
@@ -311,14 +320,28 @@ button:hover{
 [mg0]{margin: 0px;}
 [pd]{padding: 0px;}
 .bottom-main-loader{
-    /* border: 1px solid red !important; */
     position: absolute !important;
     bottom: 20px;
-    background: linear-gradient(-45deg, #faf9f9e7, #fafafadc) !important;
+    background: linear-gradient(-45deg, rgba(250, 249, 249, 0.906), rgba(250, 250, 250, 0.863)) !important;
     padding: 0px !important;
     width: 50px !important;
     height: 50px !important;
     border-radius: 50% !important;
+}
+.notification-popup{
+    border-radius: 8px;
+    bottom: 10px !important;
+    right: unset !important;
+    top: unset !important;
+    left: 10px !important;
+    background: linear-gradient(to top, var(--system-green-color), rgba(255, 255, 255, 0.788)) !important;
+
+}
+.notification-popup-content{
+    width: auto !important;
+    background: rgba(255, 255, 255, 0.788) !important;
+    font-family: var(--font2) !important;
+    font-size: 13px !important;
 }
 [loader-section]{
     display: none;
