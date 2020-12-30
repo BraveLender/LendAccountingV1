@@ -6,25 +6,27 @@
     <title>Alomo System v3 UI design</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <script src="library/jquery-3.5.1.min.js"></script>
+    <!-- <script src="library/jquery-3.5.1.min.js"></script> -->
+    <script src="library/jquery-2.2.4.js"></script>
     <script src="library/tilt.jquery.min.js"></script>
+    <script src="library/sweetalertall.js"></script>
 </head>
 <body>
     <header>
         <section admin-profile-menu tilt-this cols>
-            <span menu-item>
+            <span menu-item load_page>
                 <i class="fa fa-envelope-open-text"></i> <label>Personal Messages</label>
             </span>
-            <span menu-item>
+            <span menu-item load_page>
                 <i class="fa fa-tasks"></i> <label>Scheduled Tasks</label>
             </span>
-            <span menu-item>
+            <span menu-item load_page>
                 <i class="fa fa-user-cog"></i> <label>Account Settings</label>
             </span>
-            <span menu-item>
+            <span menu-item load_page>
                 <i class="fa fa-bug"></i> <label>Report Problem</label>
             </span>
-            <span menu-item >
+            <span menu-item>
                 <i class="fa fa-user-lock"></i> <label>Sign out</label>
             </span>
             <span menu-item in-flex center style="justify-content:center!important; background:#fff" close-admin-profile-menu>
@@ -37,7 +39,7 @@
             <div business-name-details>
                 
             </div>
-            <div main-menu>
+            <div main-menu id="system-menu">
                 <span>
                     <i class="fa fa-home"></i> <label>My Dashboard</label>
                 </span>
@@ -75,34 +77,34 @@
         </section>
         <section top-main-header flex space-between>
             <span in-flex  vertical-center>
-                <span icon-menu>
+                <span icon-menu load_page>
                     <i class="fa fa-hand-holding-usd"></i>
                 </span>
-                <span icon-menu>
+                <span icon-menu load_page>
                     <i class="fa fa-file-invoice-dollar"></i>
                 </span>
-                <span icon-menu>
+                <span icon-menu load_page>
                     <i class="fa fa-search-dollar"></i>
                 </span>
             </span>
             <!--  -->
             <span in-flex  vertical-center>
-                <span icon-menu>
+                <span icon-menu load_page>
                     <i class="fa fa-user-check"></i>
                 </span>
-                <span icon-menu>
+                <span icon-menu load_page>
                     <i class="fa fa-user-plus"></i>
                 </span>
             </span>
             <!--  -->
             <span in-flex  vertical-center>
-                <span icon-menu>
+                <span icon-menu load_page>
                     <i class="fa fa-calculator"></i>
                 </span>
-                <span icon-menu>
+                <span icon-menu load_page>
                     <i class="fa fa-mail-bulk"></i>
                 </span>
-                <span icon-menu>
+                <span icon-menu load_page>
                     <i class="fa fa-bell"></i>
                 </span>
                 
@@ -307,16 +309,14 @@
         </section>
     </main>
     <footer>
-        <div loader-section in-flex row>
+        <div loader-section in-flex row processing_loader vertical-center>
             <code blink-content>Processing</code>
             <div class="lds-hourglass"></div>
         </div>
     </footer>
     <script src="js/main.js"></script>
     <script>
-        $(function(){
-            $('[basic-card], [tilt-this]').tilt();
-        });
+        $('[basic-card], [tilt-this]').tilt();
     </script>
 </body>
 </html>
