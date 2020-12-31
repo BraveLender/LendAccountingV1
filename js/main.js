@@ -31,14 +31,17 @@ $(function(){
         }
     }
     // NAVIGATION CONTROLS
-        $("#system-menu span, [load_page]").click(function(){
+        $("#system-menu span, [load_page]").unbind().click(function(){
+            let menu = $(this);
             let page = $(this).attr("source");
             if(page && page.length > 0){
                 showBottomLoader();
-                $.get(page, function(){
-                    setTimeout(() => {
+                $.get(page, function(data){
                         mainDisplayArea.children().slideUp();
                         mainDisplayArea.empty();
+                        mainDisplayArea.html(data);
+                        activateMenu(menu);
+                    setTimeout(() => {
                         closeLoaders();
                     }, 1500);
                 }).fail(function(error){
@@ -99,6 +102,21 @@ $(function(){
         setTimeout(() => {
             closeLoaders();
         }, 4000);
+        return false;
+    }
+    function activateMenu(menu){
+        if(menu.parent().is("#system-menu")){
+            menu.parent().children('span').removeClass('active');
+            $("[top-main-header]").children("span").removeClass('active');
+            menu.addClass('active');
+        }else if(menu.parent().is("[top-main-header]")){
+            menu.parent().children('span').removeClass('active');
+            $("#system-menu").children("span").removeClass('active');
+            menu.addClass('active');
+        }else{
+            $("[top-main-header]").children("span").removeClass('active');
+            $("#system-menu").children("span").removeClass('active');
+        }
         return false;
     }
 });

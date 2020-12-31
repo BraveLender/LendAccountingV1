@@ -382,6 +382,14 @@ button:hover{
 [transition]{transition: .6s;}
 [mg0]{margin: 0px;}
 [pd]{padding: 0px;}
+[no-select]{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+[no-drag]{
+    -webkit-user-drag: none;
+}
 .bottom-main-loader{
     position: absolute !important;
     bottom: 20px;
