@@ -6,6 +6,7 @@
     <title>Alomo System v3 UI design</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link async="" href='https://fonts.googleapis.com/css?family=Capriola' rel='stylesheet'>
     <!-- <script src="library/jquery-3.5.1.min.js"></script> -->
     <script src="library/jquery-2.2.4.js"></script>
     <script src="library/tilt.jquery.min.js"></script>
@@ -36,8 +37,22 @@
     </header>
     <main>
         <section left-main-menu scroll-bar>
-            <div business-name-details>
-                
+            <div in-flex business-name-details  full-width cols >
+                <span system-brand in-flex full-width space-between vertical-center>
+                    <img src="system_images/icons/Icon-64x64.png" alt="">
+                    <label>AlomoSystem</label>
+                </span>
+                <span user-brand in-flex full-width cols space-evenly >
+                        <span business-name full-width nowrap font2>
+                            <i class="fa fa-building" business-icon></i>
+                            <label white>Lender business Name</label>
+                        </span>
+                        <span in-flex full-width row space-between branch-name>
+                            <span><i class="fa fa-code-branch" style="opacity: .47"></i></span>
+                            <label nowrap font1 small> Branch Name</label>
+                            <i class="fa fa-exchange-alt" branches-toggle cursor-pointer></i>
+                        </span>
+                </span>
             </div>
             <div main-menu id="system-menu">
                 <span>
