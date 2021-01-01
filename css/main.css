@@ -357,6 +357,49 @@ button:hover{
     -moz-user-select: none;
     -webkit-user-select: none;
 }
+/* TABLES */
+[transform-table]{
+    margin: 5px 5px !important;
+}
+[transform-table] thead{
+    margin-bottom: 5px !important;
+}
+[transform-table] thead tr{
+    background: #ffffff !important;
+}
+[transform-table] tr {
+    transition: .6s;
+    background: #ffffffb7 !important;
+}
+[transform-table] tr td{
+    padding: 2px 0px !important;
+    border-bottom: 5px solid #c6314a8f;
+}
+[transform-table] tr td:nth-child(1){
+    border-top-left-radius: 8px !important;
+}
+[transform-table] tr:hover{
+    box-shadow: 0px 3px 15px -4px #000 !important;
+    background: #e4e4e4 !important;
+}
+.paginate_button{
+    border-radius: 8px !important;
+    padding: 5px 10px !important;
+}
+.paginate_button:hover{
+    border: 0px solid transparent !important;
+    color: #f1f1f1 !important;
+    background: linear-gradient(to bottom, #fa4e19 0%, #d83e0f 100%) !important;
+
+}
+.paging_simple_numbers .current{
+    background: #ff5722 !important;
+    border: 0px solid transparent !important;
+    color: #f1f1f1 !important; 
+}
+.paging_simple_numbers .previous, .paging_simple_numbers .next{
+    font-family: var(--font2) !important;
+}
 [white]{color: #f1f1f1;}
 [grey]{color: rgb(128, 128, 128);}
 [hover-b]:hover{font-weight: bold;}
@@ -382,6 +425,12 @@ button:hover{
 [transition]{transition: .6s;}
 [mg0]{margin: 0px;}
 [pd]{padding: 0px;}
+table img{
+    display:inline-block;
+    max-height: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
 [no-select]{
     user-select: none;
     -moz-user-select: none;

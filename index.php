@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alomo System v3 UI design</title>
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link async="" href='https://fonts.googleapis.com/css?family=Capriola' rel='stylesheet'>
+    <!-- <link rel="stylesheet" type="text/css" href="library/DataTables/datatables.min.css"/> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/fh-3.1.7/r-2.2.6/sl-1.3.1/datatables.min.css"/>
+ 
+    <link rel="stylesheet" href="css/main.css">
     <!-- <script src="library/jquery-3.5.1.min.js"></script> -->
     <script src="library/jquery-2.2.4.js"></script>
     <script src="library/tilt.jquery.min.js"></script>
@@ -133,7 +136,313 @@
             </span>
         </section>
         <section main-display-area>
-            
+        <section page-title flex space-between vertical-center overflow-x>
+            <span nowrap>
+                <center><label>Date Range</label></center>
+                <span>
+                    <input type="date" title="Start Date (From)"> <b>:</b>
+                    <input type="date" title="End Date (To)">
+                    <button title="Fetch Records">
+                        <i class="fa fa-filter"></i><span font2> Filter</span>
+                    </button>
+                </span>
+            </span>
+            <span nowrap>
+                <center><label>&nbsp;</label></center>
+                <select name="" id="">
+                    <option value="">Display Type</option>
+                    <option value="cards">Cards</option>
+                    <option value="table">Tables</option>
+                </select>
+                <select name="" id="">
+                    <option value=""> Status</option>
+                    <option value="all">All</option>
+                    <option value="active">Active</option>
+                    <option value="completed">Completed</option>
+                    <option value="defaulted">Defaulted</option>
+                </select>
+                <button>
+                    <i class="fa fa-filter" title="Fetch Records"></i><span font2> Filter</span>
+                </button>
+            </span>
+            <span nowrap>
+                <center><label>&nbsp;</label></center>
+                <span class="searchBox">
+                    <input class="searchInput"type="search" placeholder="Search"  search-input>
+                    <button class="searchButton" href="#" type="button" title="Search">
+                        <i class="fa fa-search">
+                        </i>
+                    </button>
+                </span>
+            </span>
+        </section>
+        <hr hr>
+        <section full-width overflow-x>
+            <table transform-table small id="disbursementsTable" font2 >
+                <thead>
+                    <th>name</th>
+                    <th>Principle</th>
+                    <th nowrap>Principle Covered</th>
+                    <th nowrap>Principle Balance</th>
+                    <th nowrap>Interest Covered</th>
+                    <th nowrap>Interest Balance</th>
+                    <th nowrap>Amount Due</th>
+                    <th nowrap>Due Date</th>
+                    <th>Status</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Default</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Default</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Default</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Default</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Default</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Default</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Default</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Default</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Default</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Default</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span in-flex space-between vertical-center>
+                                <img src="system_images/bg/admin.jpg" alt="Client image">
+                                <span in-flex cols>
+                                    <label nowrap> John Doe</label>
+                                    <code>90%</code>
+                                </span>
+                            </span>
+                        </td>
+                        <td>$000, 000, 000</td>
+                        <td>80%</td>
+                        <td>$000, 000, 000</td>
+                        <td>10%</td>
+                        <td>$000, 000, 000</td>
+                        <td>$000, 000, 000</td>
+                        <td>13/12/2021</td>
+                        <td>Default</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+
         </section>
     </main>
     <footer>
@@ -142,11 +451,18 @@
             <div class="lds-hourglass"></div>
         </div>
     </footer>
+    <!-- DATATABLES -->
+    <!-- <script type="text/javascript" src="library/DataTables/datatables.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/fh-3.1.7/r-2.2.6/sl-1.3.1/datatables.min.js"></script>
     <script src="js/main.js"></script>
     <script>
         // $('[basic-card], [tilt-this]').tilt();
         $("header").prepend("<style></style>");
         // $("style").append(".notification-popup{left:10px !important}")
+        let table_id = $("[transform-table]").attr("id");
+        $('#'+table_id).DataTable();
     </script>
 </body>
 </html>
