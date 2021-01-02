@@ -1,6 +1,7 @@
 $(function(){
     var circle_loader = '<div class="circle_loader"><svg viewBox="0 0 140 140" width="50" height="50"><g class="outline"><path d="m 70 28 a 1 1 0 0 0 0 84 a 1 1 0 0 0 0 -84" stroke="rgba(0,0,0,0.1)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></g><g class="circle"><path d="m 70 28 a 1 1 0 0 0 0 84 a 1 1 0 0 0 0 -84" stroke="#ff7601" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="200" stroke-dasharray="300"></path></g></svg></div>';
     var mainDisplayArea = $("[main-display-area]");
+    var pageLoadTimer;
     $('[basic-card], [tilt-this]').tilt();
     // ADMIN PROFILE MENU TOGGLE AREA
     $("[admin-profile-menu] [menu-item]").click(function(){
@@ -31,7 +32,7 @@ $(function(){
         }
     }
     // NAVIGATION CONTROLS
-        $("#system-menu span, [load_page]").unbind().click(function(){
+        $("#system-menu span, [load_page], [load-page]").unbind().click(function(){
             let menu = $(this);
             let page = $(this).attr("source");
             if(page && page.length > 0){
@@ -96,10 +97,11 @@ $(function(){
                 popup: "notification-popup-content",
             }
         });
+        clearTimeout(pageLoadTimer);
         setTimeout(() => {
             $(".notification-popup").slideUp();
         }, 3500);
-        setTimeout(() => {
+        pageLoadTimer = setTimeout(() => {
             closeLoaders();
         }, 4000);
         return false;
