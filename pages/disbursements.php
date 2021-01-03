@@ -10,8 +10,8 @@ $default_display_url = $cards_url;
         <span nowrap>
             <center><label grey small>Date Range</label></center>
             <span>
-                <input type="date" title="Start Date (From)"> <b>:</b>
-                <input type="date" title="End Date (To)">
+                <input from value = "<?php echo date('Y-m');?>-01" type="date" title="Start Date (From)"> <b>:</b>
+                <input from value = "<?php echo date('Y-m-d');?>" to type="date" title="End Date (To)">
             </span>
         </span>
         <span nowrap>
@@ -19,14 +19,14 @@ $default_display_url = $cards_url;
             <center>
                 <span>
                     &nbsp;
-                    <input type="number" step="10" min="10" value="20" w80  h20>
+                    <input max-records type="number" step="10" min="10" value="20" w80  h20>
                     &nbsp;
                 </span>
             </center>
         </span>
         <span nowrap>
             <center><label grey small>Display</label></center>
-            <select name="" id=""  h30 display-type>
+            <select  h30 display-type>
                 <option value="<?php echo $cards_url;?>" selected>Cards</option>
                 <option value="<?php echo $tables_url;?>">Tables</option>
             </select>
@@ -34,7 +34,7 @@ $default_display_url = $cards_url;
         &nbsp;
         <span nowrap>
             <center><label grey small>Status</label></center>
-            <select name="" id=""  h30>
+            <select status  h30>
                 <option value="all" selected>All</option>
                 <option value="active">Active</option>
                 <option value="completed">Completed</option>
@@ -48,11 +48,17 @@ $default_display_url = $cards_url;
             </button>
         </span>
     </div>
+    <em grey style="margin-top: 15px;  ">or <i class="fa fa-arrow-right" smaller style="opacity: .5;"></i></em>
     <span nowrap>
         <center><label>&nbsp;</label></center>
         <span class="searchBox">
-            <input class="searchInput"type="search" placeholder="Search"  search-input>
-            <button class="searchButton" href="#" type="button" title="Search">
+            <input class="searchInput"type="search" placeholder="Search" search-input>
+            <select search-display-type style="height: 28px;"> 
+                <option value=""  selected>Display Type</option>
+                <option value="<?php echo $cards_url;?>">Cards</option>
+                <option value="<?php echo $tables_url;?>">Tables</option>
+            </select>
+            <button class="searchButton" role="button" style="padding: auto 10px;" type="button" title="Search">
                 <i class="fa fa-search">
                 </i>
             </button>
@@ -65,22 +71,33 @@ $default_display_url = $cards_url;
 </section>
 <script>
     $(function(){
+        $("input, select").change(function(){
+            UpdateFilters();
+            console.log(UpdateFilters());
+        });
         // TODO
         // Complete Filtering function
-        let filters = {
-            "from": "YY-MM-DD",
-            "to": "YY-MM-DD",
-            "max": "20",
-            "status": "all"
+        function UpdateFilters(){
+            let from = $("[from]").val(),
+            to = $("[to]").val(),
+            max = $("[max-records]").val(),
+            status = $("[status]").val();
+            let response =  {
+                "from": from,
+                "to": to,
+                "max": max,
+                "status": status,
+            }
+            return $.param(response);
         };
-        let encoded_filters = $.param(filters);
+        let filters = UpdateFilters();
         let defaultDisplayType = "<?php echo $default_display_url;?>";
-        if(loadInnerPage(`${defaultDisplayType}?${encoded_filters}`, "[disbursements-records]")){
+        if(loadInnerPage(`${defaultDisplayType}?${filters}`, "[disbursements-records]")){
             $('[basic-card], [tilt-this]').tilt();
         }
         $("[filter-records]").click(function(){
             let displayType = $("[display-type]").val();
-            loadInnerPage(`${displayType}?${encoded_filters}` , "[disbursements-records]");
+            loadInnerPage(`${displayType}?${filters}` , "[disbursements-records]");
         });
         // TODO
         // Add search functionality
