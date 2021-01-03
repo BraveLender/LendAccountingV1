@@ -1,3 +1,49 @@
+<?php
+session_id() == '' ? session_start() : null;
+$branch_info = [
+    "currency" => "K"
+];
+$_SESSION["branch_info"] = $branch_info;
+$feature_sources = [
+    "disbursements-cards" => "inner-pages/disbursements-cards.php",
+    "disbursements-tables" => "inner-pages/disbursements-table.php",
+    "disbursement-overview" => "popup-pages/disbursement-overview.php",
+
+];
+$_SESSION["feature_extension"] = $feature_sources;
+$main_menu = '
+        <span source="pages/disbursements.php">
+            <i class="fa fa-file-invoice"></i> <label>Disbursements</label>
+        </span>
+        <span>
+            <i class="fa fa-credit-card"></i> <label>Repayments</label>
+        </span>
+        <span>
+            <i class="fa fa-users"></i> <label>Customers</label>
+        </span>
+        <span>
+            <i class="fa fa-user-times"></i> <label>Defaults</label>
+        </span>
+        <span>
+            <i class="fa fa-dollar-sign"></i> <label>Expenses</label>
+        </span>
+        <span>
+            <i class="fa fa-folder-open"></i> <label>Documents</label>
+        </span>
+        <span>
+            <i class="fa fa-chart-bar"></i> <label>Reports</label>
+        </span>
+        <span>
+            <i class="fa fa-user-shield"></i> <label>Administrators</label>
+        </span>
+        <span>
+            <i class="fa fa-cogs"></i> <label>System Settings</label>
+        </span>
+'; // MUST BE FETCHED FROM CLIENT PACKAGES
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,33 +107,7 @@
                 <span class="active" home-page source="pages/home.php">
                     <i class="fa fa-home"></i> <label>My Dashboard</label>
                 </span>
-                <span source="pages/disbursements.php">
-                    <i class="fa fa-file-invoice"></i> <label>Disbursements</label>
-                </span>
-                <span>
-                    <i class="fa fa-credit-card"></i> <label>Repayments</label>
-                </span>
-                <span>
-                    <i class="fa fa-users"></i> <label>Customers</label>
-                </span>
-                <span>
-                    <i class="fa fa-user-times"></i> <label>Defaults</label>
-                </span>
-                <span>
-                    <i class="fa fa-dollar-sign"></i> <label>Expenses</label>
-                </span>
-                <span>
-                    <i class="fa fa-folder-open"></i> <label>Documents</label>
-                </span>
-                <span>
-                    <i class="fa fa-chart-bar"></i> <label>Reports</label>
-                </span>
-                <span>
-                    <i class="fa fa-user-shield"></i> <label>Administrators</label>
-                </span>
-                <span>
-                    <i class="fa fa-cogs"></i> <label>System Settings</label>
-                </span>
+                    <?php echo $main_menu;?>
                 <span>
                     <i class="fa fa-sign-out-alt"></i> <label>Sign out</label>
                 </span>
@@ -152,10 +172,10 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/fh-3.1.7/r-2.2.6/sl-1.3.1/datatables.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        // $(function(){
+        $(function(){
             $("[home-page]").triggerHandler("click");
-            
-        // });
+            // urlPopUp("popup-pages/disbursement-overview.php");
+        });
         
     </script>
 </body>

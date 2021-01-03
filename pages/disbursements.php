@@ -1,3 +1,10 @@
+<?php
+session_id() == '' ? session_start() : null;
+$page_feature =  "disbursements";
+$cards_url = $_SESSION["feature_extension"][$page_feature.'-cards'];
+$tables_url = $_SESSION["feature_extension"][$page_feature.'-tables'];
+$default_display_url = $cards_url;
+?>
 <section page-title flex space-between vertical-center overflow-x>
     <div in-flex>
         <span nowrap>
@@ -20,8 +27,8 @@
         <span nowrap>
             <center><label grey small>Display</label></center>
             <select name="" id=""  h30 display-type>
-                <option value="cards" selected>Cards</option>
-                <option value="table">Tables</option>
+                <option value="<?php echo $cards_url;?>" selected>Cards</option>
+                <option value="<?php echo $tables_url;?>">Tables</option>
             </select>
         </span>
         &nbsp;
@@ -67,18 +74,13 @@
             "status": "all"
         };
         let encoded_filters = $.param(filters);
-        if(loadInnerPage("inner-pages/disbursements-cards.php?"+encoded_filters, "[disbursements-records]")){
+        let defaultDisplayType = "<?php echo $default_display_url;?>";
+        if(loadInnerPage(`${defaultDisplayType}?${encoded_filters}`, "[disbursements-records]")){
             $('[basic-card], [tilt-this]').tilt();
         }
         $("[filter-records]").click(function(){
             let displayType = $("[display-type]").val();
-            if(displayType == "table"){
-                loadInnerPage("inner-pages/disbursements-table.php", "[disbursements-records]");
-            }else if(displayType == "cards"){
-                loadInnerPage("inner-pages/disbursements-cards.php", "[disbursements-records]");
-            }else{
-                AlertPageLoadFailed(400400);
-            }
+            loadInnerPage(`${displayType}?${encoded_filters}` , "[disbursements-records]");
         });
         // TODO
         // Add search functionality

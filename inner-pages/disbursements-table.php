@@ -1,3 +1,8 @@
+<?php
+session_id() == '' ? session_start() : null;
+$feature =  "disbursement";
+$overview_page = $_SESSION["feature_extension"][$feature.'-overview'];
+?>
 
 <table transform-table small id="disbursementsTable" font2 >
     <thead>
@@ -32,7 +37,7 @@
             <td>13/12/2021</td>
             <td status-text-done>Settled</td>
             <td nowrap>
-                <code badge cursor-pointer hover  title="Client Profile" load-page> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
+                <code badge cursor-pointer hover  title="Client Profile"  onclick="urlPopUp('<?php echo $overview_page;?>')"> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
                 &nbsp;
                 <code badge cursor-pointer hover title="Client Profile" load-page> &nbsp; <i class="fa fa-user-circle"></i> &nbsp; </code>
                 &nbsp;
@@ -57,7 +62,7 @@
             <td>13/12/2021</td>
             <td status-text-active>Active</td>
             <td nowrap>
-                <code badge cursor-pointer hover  title="Client Profile" load-page> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
+                <code badge cursor-pointer hover  title="Client Profile"  onclick="urlPopUp('<?php echo $overview_page;?>')"> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
                 &nbsp;
                 <code badge cursor-pointer hover title="Client Profile" load-page> &nbsp; <i class="fa fa-user-circle"></i> &nbsp; </code>
                 &nbsp;
@@ -82,7 +87,7 @@
             <td>13/12/2021</td>
             <td status-text-default>Default</td>
             <td nowrap>
-                <code badge cursor-pointer hover  title="Client Profile" load-page> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
+                <code badge cursor-pointer hover  title="Client Profile"  onclick="urlPopUp('<?php echo $overview_page;?>')"> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
                 &nbsp;
                 <code badge cursor-pointer hover title="Client Profile" load-page> &nbsp; <i class="fa fa-user-circle"></i> &nbsp; </code>
                 &nbsp;
@@ -107,7 +112,7 @@
             <td>13/12/2021</td>
             <td status-text-active>Active</td>
             <td nowrap>
-                <code badge cursor-pointer hover  title="Client Profile" load-page> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
+                <code badge cursor-pointer hover  title="Client Profile"  onclick="urlPopUp('<?php echo $overview_page;?>')"> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
                 &nbsp;
                 <code badge cursor-pointer hover title="Client Profile" load-page> &nbsp; <i class="fa fa-user-circle"></i> &nbsp; </code>
                 &nbsp;
@@ -132,7 +137,7 @@
             <td>13/12/2021</td>
             <td status-text-done>Settled</td>
             <td nowrap>
-                <code badge cursor-pointer hover  title="Client Profile" load-page> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
+                <code badge cursor-pointer hover  title="Client Profile"  onclick="urlPopUp('<?php echo $overview_page;?>')"> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
                 &nbsp;
                 <code badge cursor-pointer hover title="Client Profile" load-page> &nbsp; <i class="fa fa-user-circle"></i> &nbsp; </code>
                 &nbsp;
@@ -157,7 +162,7 @@
             <td>13/12/2021</td>
             <td status-text-done>Settled</td>
             <td nowrap>
-                <code badge cursor-pointer hover  title="Client Profile" load-page> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
+                <code badge cursor-pointer hover  title="Client Profile"  onclick="urlPopUp('<?php echo $overview_page;?>')"> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
                 &nbsp;
                 <code badge cursor-pointer hover title="Client Profile" load-page> &nbsp; <i class="fa fa-user-circle"></i> &nbsp; </code>
                 &nbsp;
@@ -182,7 +187,7 @@
             <td>13/12/2021</td>
             <td status-text-active>Active</td>
             <td nowrap>
-                <code badge cursor-pointer hover  title="Client Profile" load-page> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
+                <code badge cursor-pointer hover  title="Client Profile"  onclick="urlPopUp('<?php echo $overview_page;?>')"> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
                 &nbsp;
                 <code badge cursor-pointer hover title="Client Profile" load-page> &nbsp; <i class="fa fa-user-circle"></i> &nbsp; </code>
                 &nbsp;
@@ -207,7 +212,7 @@
             <td>13/12/2021</td>
             <td status-text-default>Default</td>
             <td nowrap>
-                <code badge cursor-pointer hover  title="Client Profile" load-page> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
+                <code badge cursor-pointer hover  title="Client Profile"  onclick="urlPopUp('<?php echo $overview_page;?>')"> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
                 &nbsp;
                 <code badge cursor-pointer hover title="Client Profile" load-page> &nbsp; <i class="fa fa-user-circle"></i> &nbsp; </code>
                 &nbsp;
@@ -232,7 +237,7 @@
             <td>13/12/2021</td>
             <td status-text-default>Default</td>
             <td nowrap>
-                <code badge cursor-pointer hover  title="Client Profile" load-page> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
+                <code badge cursor-pointer hover  title="Client Profile"  onclick="urlPopUp('<?php echo $overview_page;?>')"> &nbsp; <i class="fa fa-info-circle"></i> &nbsp; </code>
                 &nbsp;
                 <code badge cursor-pointer hover title="Client Profile" load-page> &nbsp; <i class="fa fa-user-circle"></i> &nbsp; </code>
                 &nbsp;

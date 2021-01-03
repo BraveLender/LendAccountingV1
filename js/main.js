@@ -179,3 +179,23 @@ function transformTables(){
 function activateTilt(){
     return $('[basic-card], [tilt-this]').tilt();
 }
+function urlPopUp(url){
+    swal.fire({
+        html: circle_loader,
+        confirmButtonText: "Close",
+        confirmButtonColor: "#e26e2b",
+        customClass: {
+            container: "url-popup",
+            popup: "url-popup-content",
+        }
+    });
+    $.get(url, function(data){
+            $('.swal2-content').empty();
+            $('.swal2-content').html(data);
+            restoreFunctions();
+    }).fail(function(error){
+        closeLoaders();
+        alertPageLoadFailed(error.status);
+    });
+    return false;
+}
