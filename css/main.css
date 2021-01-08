@@ -485,6 +485,8 @@ table.dataTable.no-footer {
 }
 [white]{color: #f1f1f1;}
 [grey]{color: rgb(128, 128, 128);}
+[green]{color: var(--system-green-color);}
+[orange]{color: rgb(255, 69, 0);}
 [hover-b]:hover{font-weight: bold;}
 [hover-dark]:hover{color: rgb(51, 51, 51);}
 [nowrap]{word-wrap: none; white-space: nowrap;}

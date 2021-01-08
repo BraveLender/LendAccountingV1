@@ -91,6 +91,9 @@ $("[close-branch-list]").click(function(){
 });
 $("[ branch-list] [branch]").click(function(){
     let newBranch = $(this).attr("branch");
+    if(newBranch.length < 3 || newBranch === undefined){
+        return bottomLeftNotification("<i class='fa fa-exclamation-triangle' orange dangercd></i>&nbsp;Invalid Branch.");
+    }
     toggleBranches();
     bottomLeftNotification("Switching branches..."+circle_loader);
     $.post("system/switch-branch.php", {
