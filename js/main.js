@@ -81,11 +81,97 @@ function loadInnerPage(source, destination){
         return false;
     }
 }
+    // branches switcher
+$("[branches-toggle]").click(function(){
+    toggleBranches();
+    $("[branch-selector]").css("display", "flex");
+});
+$("[close-branch-list]").click(function(){
+    toggleBranches();
+});
+$("[ branch-list] [branch]").click(function(){
+    let newBranch = $(this).attr("branch");
+    toggleBranches();
+    bottomLeftNotification("Switching branches..."+circle_loader);
+    $.post("system/switch-branch.php", {
+        "branch": newBranch
+    }, function (data, status, debug) {
+        try {
+            if(typeof data === "object"){
+                try{
+                    if(data.error === false){
+                        switchBranch();
+                    }else{
+                        bottomLeftNotification(data.message);
+                    }
+                } catch (error) {
+                    bottomLeftNotification("Stage 2 Data decoding failed");
+                    console.warn(error);
+                    console.error(debug.responseText);
+                }
+            }else{
+                try {
+                    let response = JSON.parse(data);
+                    if(response.error === false){
+                        switchBranch();
+                    }else{
+                        bottomLeftNotification(response.message);
+                    }
+                } catch (error) {
+                    bottomLeftNotification("Stage 3 Data decoding failed");
+                    console.warn(error);
+                    console.error(debug.responseText);
+                }
+            }
+        } catch (error) {
+            bottomLeftNotification("Data decoding failed");
+            console.warn(error)
+        }
+    }).fail(function (error) {
+        console.error(error);
+        error.status === 404 ? null : console.warn(error.responseText);
+       let errorCode  = error.status;
+        let message;
+       switch (errorCode) {
+            case 404:
+                message = "Branch Switcher currently not installed";
+                break;
+            case 408:
+                message = "Please try again. This process took longer than usual";
+                break;
+            case 500:
+                message = "Internal server error";
+                break;
+            case 0:
+                message = "No internet connection";
+                break;
+            default:
+                message = "Branch Switch Failed.";
+                break;
+       }
+       bottomLeftNotification(message);
+    });
+});
+    // close branch switcher
 // FUNCTIONS DEFINITIONS
 function restoreFunctions(){
     transformTables();
     activateNavigationControl();
     activateTilt();
+}
+function switchBranch(){
+    bottomLeftNotification("<i class='fa fa-check-square' green></i> Branch switched successfully. System will refresh in 4 seconds");
+    return setTimeout(() => {
+        refreshSystem();
+    }, 3000);
+}
+function refreshSystem(){
+    return document.location.href = '';
+}
+function toggleBranches(){
+    return $("[branch-selector]").animate({
+        width: "toggle"
+    });
 }
 function showBottomLoader(){
     $("[processing_loader]").slideDown();
@@ -96,7 +182,7 @@ function showBottomLoader(){
                 customClass: "bottom-main-loader"
             });
 }
-// Innner loader
+// Inner loader
 function showInnerLoader(){
     $("[processing_loader]").slideDown();
     swal.fire({
@@ -112,6 +198,9 @@ function showInnerLoader(){
 function openLoader(){return showBottomLoader();}
 function showLoader(){return showBottomLoader();}
 function closeLoaders(){$("[processing_loader]").slideUp(); return swal.close();}
+function bottomLeftNotification(msg){
+    return alertPageLoadFailed(msg);
+}
 function alertPageLoadFailed(statusCode){
     let message;
     switch (statusCode) {
@@ -133,15 +222,12 @@ function alertPageLoadFailed(statusCode){
         case 0:
             message = "No internet connection"
             break;
-        case 0:
-            message = "No internet connection"
-            break;
         default:
             message = typeof statusCode === "string" && statusCode.length > 0 ? statusCode : "Something went wrong";
             break;
     }
     swal.fire({
-        text: message,
+        html: message,
         showConfirmButton: false,
         customClass:{
             container: "notification-popup",

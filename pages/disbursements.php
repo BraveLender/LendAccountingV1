@@ -54,7 +54,7 @@ $default_display_url = $cards_url;
         <span class="searchBox">
             <input class="searchInput"type="search" placeholder="Search" search-input>
             <select search-display-type style="height: 28px;"> 
-                <option value=""  selected>Display Type</option>
+                <option value=""  selected>Display</option>
                 <option value="<?php echo $cards_url;?>">Cards</option>
                 <option value="<?php echo $tables_url;?>">Tables</option>
             </select>

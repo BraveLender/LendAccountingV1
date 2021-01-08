@@ -100,6 +100,28 @@ $main_menu = '
                             <span><i class="fa fa-code-branch" style="opacity: .47"></i></span>
                             <label nowrap font1 small> Branch Name</label>
                             <i class="fa fa-exchange-alt" branches-toggle cursor-pointer></i>
+                                <span branch-selector  row>
+                                    <span branch-list>
+                                        <span branch in-flex full-width cursor-pointer>
+                                            <i  class="fa fa-code-branch"></i><label> Branch Name</label>
+                                        </span>
+                                        <span branch in-flex full-width cursor-pointer>
+                                            <i  class="fa fa-code-branch"></i><label> Branch Name</label>
+                                        </span>
+                                        <span branch in-flex full-width cursor-pointer>
+                                            <i  class="fa fa-code-branch"></i><label> Branch Name</label>
+                                        </span>
+                                        <span branch in-flex full-width cursor-pointer>
+                                            <i  class="fa fa-code-branch"></i><label> Branch Name</label>
+                                        </span>
+                                        <span branch in-flex full-width cursor-pointer>
+                                            <i  class="fa fa-code-branch"></i><label> Branch Name</label>
+                                        </span>
+                                    </span>
+                                    <span title="Hide panel" close-branch-list in-flex cols center style="justify-content:center!important; background:#fff">
+                                    <i class="fa fa-chevron-left"></i>
+                                    </span>
+                                </span>
                         </span>
                 </span>
             </div>
