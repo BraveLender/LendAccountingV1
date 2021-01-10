@@ -13,6 +13,7 @@
     --primary-color: rgb(var(--primary-color-cords));
     --secondary-color-cords: 226, 110, 43;
     --secondary-color: rgb(226, 110, 43);
+    --blue: rgb(59, 120, 189);
 }
 html, body{
     /* background-color: #e86b19;
@@ -117,7 +118,7 @@ main{
     padding: 6px;
     margin: 0px;
     box-shadow: 0px 2px 0px 4px rgba(148, 146, 146, .45);
-    font-family: 'Capriola';
+    font-family: 'Capriola', var(--font1);
 }
 [user-brand] [business-icon]{
     border: 0px solid #fff;
@@ -420,7 +421,126 @@ button:hover{
     -moz-user-select: none;
     -webkit-user-select: none;
 }
+/* PAGE HEADERS */
+[white-page-header]{
+    background: linear-gradient(45deg, #ffffff, #f9f9f9b8);
+    min-height: 120px;
+    border-bottom-right-radius: 6px;
+    box-shadow: 1px 2px 20px 2px rgba(var(--primary-color-cords), .8);
+}
+[tabs] [bottom-tab-list]{
+    border-top: 1px solid #77777773;
+}
+[tabs] [bottom-tab-list] span {
+    transition: .6s;
+    padding: 10px;
+    font-weight: 800;
+    color: #2d2c2ce6;
+    cursor:pointer;
+    border: 1px solid #fff;
+    border-bottom: 3px solid #fff;
+    border-right-color: #77777773;
+    border-bottom-right-radius: 3px;
+}
+[tabs] [bottom-tab-list] span:hover {
+    color: rgba(51, 51, 51, 0.678) !important;
+    border-bottom: 3px solid #77777773;
+}
+[tabs] [bottom-tab-list] span.active{
+    color: rgba(51, 51, 51, 0.678) !important;
+    border-bottom: 3px solid #77777773;
+}
+/* ACCOUNTS CARD */
+[accounts-card]{
+    color: rgb(68, 68, 68);
+    font-size: 14px;
+    font-weight: 400;
+    height: 200px;
+    line-height: 21px;
+    margin: 20px 10px;
+    padding: 0px;
+    position: relative;
+    text-align: left;
+    text-size-adjust: 100%;
+    min-width: 300px;
+}
+[accounts-card] *:not(.fa) {
+    font-family: 'Capriola', var(--font1);
+    line-height: 1.5;
+}
+[accounts-card] .balance__body {
+    color: #fff;
+    height: 200px;
+    padding: 20px;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+[accounts-card] .balance__top {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+[accounts-card] .balance__middle {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
 
+[accounts-card] .balance__cache {
+    font-size: 27px;
+    font-weight: 600;
+    display: -ms-flexbox;
+    display: flex;
+}
+[accounts-card] .balance__bottom {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+[accounts-card] .balance__extra-currency {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+[accounts-card] .balance__icon-currency {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 45px;
+    height: 44px;
+    max-width: 45px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+[accounts-card] [card-in-actions] {
+    margin: 10px 5px;
+    color: #fff;
+    background-color: inherit;
+    line-height: 1.33 !important;
+    text-transform: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+    min-width: 43%;
+    text-align: center;
+    padding: 4px 0 3px;
+    cursor: pointer;
+}
+[accounts-card] [card-in-actions]:hover {
+    background-color: #fff;
+    color: #2b393f;
+    transition: .6s;
+}
 /* TABLES */
 [transform-table]{
     margin: 0px 5px !important;
@@ -495,6 +615,7 @@ table.dataTable.no-footer {
 [flex]{display: flex;}
 [in-flex]{display: inline-flex;}
 [row-wrap]{flex-flow: row; flex-wrap: wrap;}
+[wrap]{white-space: wrap; overflow-x: wrap; flex-wrap: wrap;}
 [cols]{flex-flow: column;}
 [space-evenly]{justify-content: space-evenly;}
 [space-between]{justify-content: space-between;}
@@ -519,6 +640,10 @@ table.dataTable.no-footer {
 [w80],[w-80]{width: 80px;}
 [h30]{height:31px;}
 [h20]{height:20px;}
+[bg-green]{background-color: var(--system-green-color);}
+[bg-blue]{background-color: var(--blue)}
+[bg-orange]{background-color: #FF5722;}
+
 [badge]{
     transition: .6s;
     background: #F44336;

@@ -16,7 +16,10 @@ $main_menu = '
             <i class="fa fa-file-invoice"></i> <label>Disbursements</label>
         </span>
         <span>
-            <i class="fa fa-credit-card"></i> <label>Repayments</label>
+            <i class="fa fa-credit-card"></i> <label>Collections</label>
+        </span>
+        <span>
+            <i class="fa fa-people-arrows"></i> <label>Agents</label>
         </span>
         <span>
             <i class="fa fa-users"></i> <label>Customers</label>
@@ -34,7 +37,7 @@ $main_menu = '
             <i class="fa fa-chart-bar"></i> <label>Reports</label>
         </span>
         <span>
-            <i class="fa fa-user-shield"></i> <label>Administrators</label>
+            <i class="fa fa-user-shield"></i> <label>Employees</label>
         </span>
         <span>
             <i class="fa fa-cogs"></i> <label>System Settings</label>
@@ -52,8 +55,8 @@ $main_menu = '
     <title>Alomo System v3 UI design</title>
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link async="" href='https://fonts.googleapis.com/css?family=Capriola' rel='stylesheet'>
-    <!-- <link rel="stylesheet" type="text/css" href="library/DataTables/datatables.min.css"/> -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/fh-3.1.7/r-2.2.6/sl-1.3.1/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="library/DataTables/datatables.min.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/fh-3.1.7/r-2.2.6/sl-1.3.1/datatables.min.css"/> -->
  
     <link rel="stylesheet" href="css/main.css">
     <!-- <script src="library/jquery-3.5.1.min.js"></script> -->
@@ -77,7 +80,10 @@ $main_menu = '
                 <i class="fa fa-bug"></i> <label>Report Problem</label>
             </span>
             <span menu-item>
-                <i class="fa fa-user-lock"></i> <label>Sign out</label>
+                <i class="fa fa-user-lock"></i> <label>Lock</label>
+            </span>
+            <span menu-item>
+                <i class="fa fa-sign-out-alt"></i> <label>Sign Out</label>
             </span>
             <span menu-item in-flex center style="justify-content:center!important; background:#fff" close-admin-profile-menu>
                 <center><i class="fa fa-chevron-up"></i></center>
@@ -94,27 +100,27 @@ $main_menu = '
                 <span user-brand in-flex full-width cols space-evenly >
                         <span business-name full-width nowrap font2>
                             <i class="fa fa-building" business-icon></i>
-                            <label white>Lender business Name</label>
+                            <label white title="Your Corporate">Lender business Name</label>
                         </span>
                         <span in-flex full-width row space-between branch-name>
-                            <span><i class="fa fa-code-branch" style="opacity: .47"></i></span>
-                            <label nowrap font1 small> Branch Name</label>
-                            <i class="fa fa-exchange-alt" branches-toggle cursor-pointer></i>
+                            <span title="You're currently logged in to this branch"><i class="fa fa-code-branch" style="opacity: .47"></i></span>
+                            <label nowrap font1 small title="You're currently logged in to this branch"> Branch Name</label>
+                            <i class="fa fa-exchange-alt" branches-toggle cursor-pointer title="Open branches"></i>
                                 <span branch-selector  row>
                                     <span branch-list>
-                                        <span branch in-flex full-width cursor-pointer>
+                                        <span branch in-flex full-width cursor-pointer title="Click to Switch to this branch">
                                             <i  class="fa fa-code-branch"></i><label> Branch Name</label>
                                         </span>
-                                        <span branch in-flex full-width cursor-pointer>
+                                        <span branch in-flex full-width cursor-pointer title="Click to Switch to this branch">
                                             <i  class="fa fa-code-branch"></i><label> Branch Name</label>
                                         </span>
-                                        <span branch in-flex full-width cursor-pointer>
+                                        <span branch in-flex full-width cursor-pointer title="Click to Switch to this branch">
                                             <i  class="fa fa-code-branch"></i><label> Branch Name</label>
                                         </span>
-                                        <span branch in-flex full-width cursor-pointer>
+                                        <span branch in-flex full-width cursor-pointer title="Click to Switch to this branch">
                                             <i  class="fa fa-code-branch"></i><label> Branch Name</label>
                                         </span>
-                                        <span branch in-flex full-width cursor-pointer>
+                                        <span branch in-flex full-width cursor-pointer title="Click to Switch to this branch">
                                             <i  class="fa fa-code-branch"></i><label> Branch Name</label>
                                         </span>
                                     </span>
@@ -188,10 +194,10 @@ $main_menu = '
         </div>
     </footer>
     <!-- DATATABLES -->
-    <!-- <script type="text/javascript" src="library/DataTables/datatables.min.js"></script> -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="library/DataTables/datatables.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/fh-3.1.7/r-2.2.6/sl-1.3.1/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/fh-3.1.7/r-2.2.6/sl-1.3.1/datatables.min.js"></script> -->
     <script src="js/main.js"></script>
     <script>
         $(function(){

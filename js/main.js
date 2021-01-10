@@ -1,4 +1,6 @@
 var circle_loader = '<div class="circle_loader"><svg viewBox="0 0 140 140" width="50" height="50"><g class="outline"><path d="m 70 28 a 1 1 0 0 0 0 84 a 1 1 0 0 0 0 -84" stroke="rgba(0,0,0,0.1)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></g><g class="circle"><path d="m 70 28 a 1 1 0 0 0 0 84 a 1 1 0 0 0 0 -84" stroke="#ff7601" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="200" stroke-dasharray="300"></path></g></svg></div>';
+var warningIcon = "<i class='fa fa-exclamation-triangle' orange danger></i>";
+var checkIcon = "<i class='fa fa-check-square' green></i>";
 var mainDisplayArea = $("[main-display-area]");
 restoreFunctions();
 // ADMIN PROFILE MENU TOGGLE AREA
@@ -92,9 +94,8 @@ $("[close-branch-list]").click(function(){
 $("[ branch-list] [branch]").click(function(){
     let newBranch = $(this).attr("branch");
     if(newBranch.length < 3 || newBranch === undefined){
-        return bottomLeftNotification("<i class='fa fa-exclamation-triangle' orange dangercd></i>&nbsp;Invalid Branch.");
+        return bottomLeftNotification(warningIcon+"&nbsp;Invalid Branch.");
     }
-    toggleBranches();
     bottomLeftNotification("Switching branches..."+circle_loader);
     $.post("system/switch-branch.php", {
         "branch": newBranch
@@ -103,7 +104,8 @@ $("[ branch-list] [branch]").click(function(){
             if(typeof data === "object"){
                 try{
                     if(data.error === false){
-                        switchBranch();
+                        toggleBranches();
+                        branchSwitched();
                     }else{
                         bottomLeftNotification(data.message);
                     }
@@ -116,7 +118,8 @@ $("[ branch-list] [branch]").click(function(){
                 try {
                     let response = JSON.parse(data);
                     if(response.error === false){
-                        switchBranch();
+                        toggleBranches();
+                        branchSwitched();
                     }else{
                         bottomLeftNotification(response.message);
                     }
@@ -152,7 +155,7 @@ $("[ branch-list] [branch]").click(function(){
                 message = "Branch Switch Failed.";
                 break;
        }
-       bottomLeftNotification(message);
+       bottomLeftNotification(`${warningIcon}  ${message}`);
     });
 });
     // close branch switcher
@@ -162,8 +165,8 @@ function restoreFunctions(){
     activateNavigationControl();
     activateTilt();
 }
-function switchBranch(){
-    bottomLeftNotification("<i class='fa fa-check-square' green></i> Branch switched successfully. System will refresh in 4 seconds");
+function branchSwitched(){
+    bottomLeftNotification(checkIcon+"&nbsp;Branch switched successfully. System will refresh in 4 seconds");
     return setTimeout(() => {
         refreshSystem();
     }, 3000);
@@ -208,25 +211,25 @@ function alertPageLoadFailed(statusCode){
     let message;
     switch (statusCode) {
         case 400400:
-            message = "Invalid parameters";
+            message = `${warningIcon} Invalid parameters`;
             break;
         case 404:
-            message = "This feature is currently unavailable";
+            message = `${warningIcon} This feature is currently unavailable`;
             break;
         case 404404:
-            message = "Source currently not available";
+            message = `${warningIcon} Source currently not available`;
             break;
         case 408:
-            message = "Please try again. This process took longer than usual"
+            message = `${warningIcon} Please try again. This process took longer than usual`
             break;
         case 500:
-            message = "Internal server error"
+            message = `${warningIcon} Internal server error`
             break;
         case 0:
-            message = "No internet connection"
+            message = `${warningIcon} No internet connection`
             break;
         default:
-            message = typeof statusCode === "string" && statusCode.length > 0 ? statusCode : "Something went wrong";
+            message = typeof statusCode === "string" && statusCode.length > 0 ? statusCode : `${warningIcon} Something went wrong`;
             break;
     }
     swal.fire({
