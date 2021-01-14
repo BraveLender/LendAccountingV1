@@ -269,7 +269,9 @@ function transformTables(){
     return null;
 }
 function activateTilt(){
-    return $('[basic-card], [tilt-this]').tilt();
+    return $('[basic-card], [tilt-this]').tilt({
+        scale: 1.2
+    });
 }
 function urlPopUp(url){
     swal.fire({

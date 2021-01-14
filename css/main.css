@@ -732,6 +732,7 @@ img{
     background: linear-gradient(to bottom, rgba(255, 87, 34, 0.478), transparent) !important;
     border-top-left-radius: 40px !important;
     border-top-right-radius: 40px !important;
+    margin-top: 6% !important;
 }
 .custom-prompt .swal2-content{
     color: #fff !important; 

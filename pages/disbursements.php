@@ -93,7 +93,9 @@ $default_display_url = $cards_url;
         let filters = UpdateFilters();
         let defaultDisplayType = "<?php echo $default_display_url;?>";
         if(loadInnerPage(`${defaultDisplayType}?${filters}`, "[disbursements-records]")){
-            $('[basic-card], [tilt-this]').tilt();
+            $('[basic-card], [tilt-this]').tilt({
+                scale: 1.2
+            });
         }
         $("[filter-records]").click(function(){
             let displayType = $("[display-type]").val();
