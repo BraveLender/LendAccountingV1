@@ -291,3 +291,20 @@ function urlPopUp(url){
     });
     return false;
 }
+function prompt(msg){
+    return swal.fire({
+        html: `${msg}`,
+        icon: "question",
+        customClass: "custom-prompt",
+        confirmButtonColor: "#4caf50",
+        confirmButtonText: "Confirm",
+        cancelButtonColor: "#ff5722",
+        focusCancel: true,
+        showCancelButton:true,
+        reverseButtons:true,
+        allowOutsideClick: false,
+        allowEscapeKey:false,
+    }).then((user_response)=>{
+        return user_response.isDismissed === false ? true : false;
+    });
+}

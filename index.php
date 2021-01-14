@@ -57,12 +57,13 @@ $main_menu = '
     <link async="" href='https://fonts.googleapis.com/css?family=Capriola' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="library/DataTables/datatables.min.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/fh-3.1.7/r-2.2.6/sl-1.3.1/datatables.min.css"/> -->
- 
-    <link rel="stylesheet" href="css/main.css">
+
     <!-- <script src="library/jquery-3.5.1.min.js"></script> -->
     <script src="library/jquery-2.2.4.js"></script>
     <script src="library/tilt.jquery.min.js"></script>
     <script src="library/sweetalertall.js"></script>
+     
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <header>
@@ -201,8 +202,12 @@ $main_menu = '
     <script src="js/main.js"></script>
     <script>
         $(function(){
-            $("[home-page]").triggerHandler("click");
+            // $("[home-page]").triggerHandler("click");
             // urlPopUp("popup-pages/disbursement-overview.php");
+            prompt("Confirm Action?").then(function(response){
+                // console.log(response);
+                prompt(response);
+            });
         });
         
     </script>
