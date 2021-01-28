@@ -52,7 +52,7 @@ $main_menu = '
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alomo System v3 UI design</title>
+    <title>LendAccounting System</title>
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link async="" href='https://fonts.googleapis.com/css?family=Capriola' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="library/DataTables/datatables.min.css"/>
@@ -93,8 +93,8 @@ $main_menu = '
         <section left-main-menu scroll-bar>
             <div in-flex business-name-details  full-width cols >
                 <span system-brand in-flex full-width space-between vertical-center>
-                    <img src="system_images/icons/Icon-64x64.png" alt="AlomoSystem" no-select no-drag>
-                    <label  no-select no-drag>AlomoSystem</label>
+                    <img src="system_images/icons/Icon-64x64.png" alt="LendAccounting" no-select no-drag>
+                    <label  no-select no-drag>LendAccounting</label>
                 </span>
                 <span user-brand in-flex full-width cols space-evenly >
                         <span business-name full-width nowrap font2>
@@ -195,10 +195,10 @@ $main_menu = '
     <!-- DATATABLES -->
     <script src="library/jquery-2.2.4.js"></script>
     <script src="library/tilt.jquery.min.js"></script>
-    <script type="text/javascript" src="library/DataTables/datatables.min.js"></script>
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <!-- <script type="text/javascript" src="library/DataTables/datatables.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/fh-3.1.7/r-2.2.6/sl-1.3.1/datatables.min.js"></script> -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/fh-3.1.7/r-2.2.6/sl-1.3.1/datatables.min.js"></script>
     <script src="js/main.js"></script>
     <script>
         $(function(){
@@ -214,6 +214,7 @@ $main_menu = '
                 }, 2000);
                 
             });
+            $("[loader-section]").css("display", "none");
         });
         
     </script>

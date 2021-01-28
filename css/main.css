@@ -101,7 +101,7 @@ main{
 [system-brand] label{
     font-family: var(--font1);
     font-size: 1.945em;
-    font-size: 1.9vw;
+    font-size: 1.85vw;
     font-weight: bold;
     color: var(--secondary-color);
     margin-right: 5px;
@@ -743,7 +743,7 @@ img{
     -webkit-user-select: none;
 }
 [loader-section]{
-    display: none;
+    /* display: none; */
     position: absolute;
     top:0px;
     right: -20px;
