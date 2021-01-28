@@ -59,9 +59,7 @@ $main_menu = '
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/fh-3.1.7/r-2.2.6/sl-1.3.1/datatables.min.css"/> -->
 
     <!-- <script src="library/jquery-3.5.1.min.js"></script> -->
-    <script src="library/jquery-2.2.4.js"></script>
-    <script src="library/tilt.jquery.min.js"></script>
-    <script src="library/sweetalertall.js"></script>
+    <script async src="library/sweetalertall.js"></script>
      
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -195,6 +193,8 @@ $main_menu = '
         </div>
     </footer>
     <!-- DATATABLES -->
+    <script src="library/jquery-2.2.4.js"></script>
+    <script src="library/tilt.jquery.min.js"></script>
     <script type="text/javascript" src="library/DataTables/datatables.min.js"></script>
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
@@ -206,7 +206,13 @@ $main_menu = '
             // urlPopUp("popup-pages/disbursement-overview.php");
             prompt("Confirm Action?").then(function(response){
                 // console.log(response);
-                prompt(response);
+                // prompt(response);
+                // showBottomLoader();
+                bottomLeftNotification("Processing your request..."+circle_loader);
+                response && setTimeout(() => {
+                    bottomLeftNotification(checkIcon+"&nbsp; Operation completed successfully.");
+                }, 2000);
+                
             });
         });
         
