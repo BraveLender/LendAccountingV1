@@ -98,11 +98,11 @@ $main_menu = '
                 </span>
                 <span user-brand in-flex full-width cols space-evenly >
                         <span business-name full-width nowrap font2>
-                            <i class="fa fa-building" business-icon></i>
+                            <i class="fa fa-bars" business-icon title="toggle menu" cursor-pointer></i>
                             <label white title="Your Corporate">Lender business Name</label>
                         </span>
                         <span in-flex full-width row space-between branch-name>
-                            <span title="You're currently logged in to this branch"><i class="fa fa-code-branch" style="opacity: .47"></i></span>
+                            <span title="You're currently logged in to this branch"><i class="fa fa-code-branch" style="opacity: .47;padding-right: 25px;"></i></span>
                             <label nowrap font1 small title="You're currently logged in to this branch"> Branch Name</label>
                             <i class="fa fa-exchange-alt" branches-toggle cursor-pointer title="Open branches"></i>
                                 <span branch-selector  row>
@@ -202,6 +202,7 @@ $main_menu = '
     <script src="js/main.js"></script>
     <script>
         $(function(){
+           
             // $("[home-page]").triggerHandler("click");
             // urlPopUp("popup-pages/disbursement-overview.php");
             prompt("Confirm Action?").then(function(response){

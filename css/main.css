@@ -1,6 +1,6 @@
 :root{
     --bg-image: url("../system_images/bg/luke-chesser-tgrBcf7S_dY-unsplash.jpg");
-    --left-menu-width: 18%;
+    --left-menu-width: 18.5%;
     --top-header-height: 50px;
     --business-name-height: calc(var(--top-header-height) + 50px);
     --system-brand-height: calc(var(--business-name-height) - 60%);
@@ -14,6 +14,7 @@
     --secondary-color-cords: 226, 110, 43;
     --secondary-color: rgb(226, 110, 43);
     --blue: rgb(59, 120, 189);
+    --user-brand-height: calc(var(--business-name-height) - var(--system-brand-height));
 }
 html, body{
     /* background-color: #e86b19;
@@ -50,6 +51,7 @@ main{
     overflow: hidden;
     overflow-y: auto;
     background: linear-gradient(to left, rgb(223, 223, 223), rgba(238, 238, 238, 0.71));
+    z-index: 999;
 }
 /* MAIN TOP HEADER TAB */
 [top-main-header]{
@@ -108,7 +110,7 @@ main{
     text-shadow: 2px 2px 1px rgba(50,100,150,.4);
 }
 [user-brand]{
-    height: calc(var(--business-name-height) - var(--system-brand-height));
+    height: var(--user-brand-height);
 }
 [user-brand] [business-name]{
     height: calc((var(--business-name-height) - var(--system-brand-height)) / 1.5);
@@ -121,14 +123,22 @@ main{
     font-family: 'Capriola', var(--font1);
 }
 [user-brand] [business-icon]{
+    display: inline-flex;
     border: 0px solid #fff;
-    padding: 10px;
+    padding: 8px;  
     margin-top: -6px;
     height: 23px;
     margin-left: -6px;
     background: linear-gradient(99deg, #fff, #f8f8f87d);
     color: #333;
     opacity: .8;
+    min-width:22px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    font-size: 21px;
 }
 [user-brand] [branch-name]{
     background: rgb(219 218 218 / 81%);
@@ -138,7 +148,7 @@ main{
     box-shadow: inset 0px 10px 6px 0px #eee;
     border-bottom: 1px solid #ccc;
 }
-
+/* BRANCH TOGGLE */
 [user-brand] [branches-toggle]{
     color: #595959;
     text-shadow: 1px 0px 1px rgba(var(--primary-color-cords), 0.62);
@@ -154,7 +164,7 @@ main{
     display: none;
     position: fixed;
     z-index: 999;
-    top: calc(1.5% + var(--top-header-height));
+    top: calc(-0.5% + var(--top-header-height));
     left: calc(var(--left-menu-width) + 5px);
     min-height: 200px;
     max-height: calc(100vh - (1.5% + var(--top-header-height)));
@@ -233,7 +243,8 @@ main{
     height: 40px;
     min-height: 30px;
     color:#444444ed;
-    margin-bottom: 5px;
+    padding: 5px 0px;
+    /* margin-bottom: 5px; */
 }
 [main-menu] > span.active{
     background: #f8f8f89a;
@@ -258,11 +269,13 @@ main{
     
 }
 [menu-item] i, [main-menu] > span i{
-    margin: 0px 5px;
+    margin: 5px 5px;
+    padding-left: 5px;
     width:20px;
+    font-size: 18px;
 }
 [menu-item] label, [main-menu] > span label{
-    padding-left: 10px;
+    padding-left: 20px;
     font-family: var(--basic-font-family);
     font-size: 13px;
 }
@@ -583,6 +596,31 @@ table.dataTable.no-footer {
 [transform-table] tr:hover{
     box-shadow: 0px 3px 15px -4px #000 !important;
     background: #e4e4e4 !important;
+}
+.dt-buttons{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+}
+.dt-buttons button{
+    padding: 3px;
+    font-size: small;
+    text-decoration: none;
+    height: fit-content;
+    font-weight: 13px;
+    color: #fbf3f3;
+    background: var(--system-green-color);
+    border: 2px solid transparent;
+    box-shadow: var(--input-hover-shadow);
+}
+.dt-buttons button:hover{
+    transition: .6s;
+    border: 2px solid transparent !important;
+    background: #fff !important;
+    color: #777;
+}
+.dt-buttons button:not(.fa){
+    font-family: var(--font2) !important;
 }
 .paginate_button{
     border-radius: 8px !important;

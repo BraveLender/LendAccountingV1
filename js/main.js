@@ -2,6 +2,8 @@ var circle_loader = '<div class="circle_loader"><svg viewBox="0 0 140 140" width
 var warningIcon = "<i class='fa fa-exclamation-triangle' orange danger></i>";
 var checkIcon = "<i class='fa fa-check-square' green></i>";
 var mainDisplayArea = $("[main-display-area]");
+var leftMenu = $("[left-main-menu]");
+var root = document.documentElement;
 restoreFunctions();
 // ADMIN PROFILE MENU TOGGLE AREA
 $("[admin-profile-menu] [menu-item]").click(function(){
@@ -164,6 +166,7 @@ function restoreFunctions(){
     transformTables();
     activateNavigationControl();
     activateTilt();
+    activateNavToggle();
 }
 function branchSwitched(){
     bottomLeftNotification(checkIcon+"&nbsp;Branch switched successfully. System will refresh in 4 seconds");
@@ -265,7 +268,19 @@ function activateMenu(menu){
 }
 function transformTables(){
     let table_id = $("[transform-table]").attr("id");
-    $('#'+table_id).DataTable();
+    $('#'+table_id).DataTable({
+        dom: 'lBfrtip',
+        buttons: [
+            {
+                extend: "pdf",
+                text: '<i class="fa fa-file-pdf"> &nbsp; Export to PDF</i>'
+            },
+            {
+                extend: "excel",
+                text: '<i class="fa fa-file-excel"> &nbsp; Export to Excel</i>'
+            }
+        ]
+    });
     return null;
 }
 function activateTilt(){
@@ -308,5 +323,18 @@ function prompt(msg){
         allowEscapeKey:false,
     }).then((user_response)=>{
         return user_response.isDismissed === false ? true : false;
+    });
+}
+
+function activateNavToggle(){
+    return $("[business-name] *").click(function(){
+        if(leftMenu.width() == 40){
+            leftMenu.animate({ width: "18.5%"})
+            root.style.setProperty('--left-menu-width', "18.5%");
+        }else{
+            leftMenu.animate({ width: "40px"});
+            root.style.setProperty('--left-menu-width', "40px");
+        }
+        
     });
 }
