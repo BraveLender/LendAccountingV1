@@ -26,7 +26,7 @@ glassmophism and Neumophosm UI principles
 
 ![image](https://user-images.githubusercontent.com/35315311/221576164-1434bd92-84f4-49c8-9b63-8fc3e7633e40.png)
 
-![image](https://user-images.githubusercontent.com/35315311/221572912-fc37f0e8-1b90-4485-9a6c-48ab3490cd39.png)
+![image](https://user-images.githubusercontent.com/35315311/221576429-60abb974-6ed8-4015-8d9b-80c2ccf43262.png)
 
 # This project was built with
 
