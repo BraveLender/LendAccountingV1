@@ -205,7 +205,7 @@ $main_menu = '
            
             // $("[home-page]").triggerHandler("click");
             // urlPopUp("popup-pages/disbursement-overview.php");
-            prompt("Confirm Action?").then(function(response){
+            prompt("PopUp Test - Confirm Action?").then(function(response){
                 // console.log(response);
                 // prompt(response);
                 // showBottomLoader();

@@ -1,1 +1,1 @@
-Page waiting completion
+loaded another page as a popup
