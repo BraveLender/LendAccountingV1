@@ -24,8 +24,9 @@ glassmophism and Neumophosm UI principles
 - Click the disbursement tab and hover over the cards (It's awesome)
 - Toggle tables and click filter in order to view tables
 
+![image](https://user-images.githubusercontent.com/35315311/221576164-1434bd92-84f4-49c8-9b63-8fc3e7633e40.png)
+
 ![image](https://user-images.githubusercontent.com/35315311/221572912-fc37f0e8-1b90-4485-9a6c-48ab3490cd39.png)
-![image](https://user-images.githubusercontent.com/35315311/221573023-6ea69600-e8aa-4438-a018-c424e5b69e6c.png)
 
 # This project was built with
 
