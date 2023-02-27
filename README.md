@@ -6,11 +6,12 @@ glassmophism and Neumophosm UI principles
 ### Lend Accounting System V1 UI 2020 project (Micro Finance)
 
 ## Download
+
   ### method 1 
-   - Ensure you have PHP 7+ installed
-   - Download or clone this repo and cd into the root directory using terminal or cmd
-   - Run `php -S localhost:5000`
-   - go to your your browser and visit http://localhost:5000 or http://127.0.0.1:5000
+     - Ensure you have PHP 7+ installed
+     - Download or clone this repo and cd into the root directory using terminal or cmd
+     - Run `php -S localhost:5000`
+     - go to your your browser and visit http://localhost:5000 or http://127.0.0.1:5000
 
   ### Method 2
     - Follow point 1 and 2 from method 1
