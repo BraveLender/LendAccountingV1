@@ -1,6 +1,8 @@
 # LendAccountingV1
-> I made this project while learning and improving on building business systems UI dashboard using moden
-glassmophism and Neumophosm UI principles
+> I made this project while learning and improving on building business systems UI dashboards using **moden
+glassmophism and Neumorphism UI principles**
+
+
 > Hopefully, You like it :-)
 
 ### Lend Accounting System V1 UI 2020 project (Micro Finance)
