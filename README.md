@@ -26,10 +26,15 @@ glassmophism and Neumorphism UI principles**
 - Click the disbursement tab and hover over the cards (It's awesome)
 - Toggle tables and click filter in order to view tables
 
+
 ![- LendAccounting System - localhost](https://user-images.githubusercontent.com/35315311/221580944-85be995f-86d7-4141-95d2-f32432dcb456.png)
+
+[LendAccounting-System.webm](https://user-images.githubusercontent.com/35315311/221588572-a0c14ecb-ad91-4930-be34-d17f1e305380.webm)
 
 
 ![image](https://user-images.githubusercontent.com/35315311/221576429-60abb974-6ed8-4015-8d9b-80c2ccf43262.png)
+
+
 
 # This project was built with
 
