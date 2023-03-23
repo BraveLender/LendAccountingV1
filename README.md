@@ -7,7 +7,7 @@ glassmophism and Neumorphism UI principles**
 
 ### Lend Accounting System V1 UI 2020 project (Micro Finance)
 
-## Download
+## Download or [VIEW LIVE DEMO](http://fintech-dashboard.great-site.net/)
 
   ### method 1 
      - Ensure you have PHP 7+ installed
